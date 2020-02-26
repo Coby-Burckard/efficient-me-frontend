@@ -22,7 +22,7 @@ const Counter = () => {
 
   return (
     <div>
-      <p>The count is {count} </p>
+      <p>The count is <span className="count">{count}</span> </p>
       <button onClick={incrementClick}>+1</button>
       <input value={value} onChange={onValueChange} />
       <button onClick={setClick}>set</button>
