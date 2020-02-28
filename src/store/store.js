@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counter from '../reducers/counter'
+import userReducer from '../reducers/user'
 
 // combining reducers into a 'root' reducer
 const rootReducer = {
-  counter: counter
+  user: userReducer
 }
 
 const configure = () => {

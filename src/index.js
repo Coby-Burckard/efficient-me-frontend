@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import './index.scss';
 import configureStore from './store/store'
-import Counter from './components/Counter'
+import LogInOutButton from './components/LogInOutButton'
 
 const store = configureStore()
 
@@ -11,7 +11,7 @@ console.log(store)
 
 const app = (
   <Provider store={store} >
-    <Counter />
+    <LogInOutButton />
   </Provider> 
 )
 

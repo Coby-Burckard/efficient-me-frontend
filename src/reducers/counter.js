@@ -5,7 +5,7 @@ const defaultState = {
 }
 
 const counterReducer = createReducer(defaultState, {
-  INCREMENT: (state, action) => {
+  INCREMENT: (state) => {
     state.count += 1
   },
   SET: (state, action) => {
