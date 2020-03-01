@@ -1,29 +1,29 @@
-import { loginRequest } from '../ajax/user'
+import { loginRequest } from "../ajaxOrLocal/user";
 
-//asycn login function
-const startLogin = (payload) => {
-  return (dispatch) => {
+//asycn login function to log in from server
+const startLogin = payload => {
+  return dispatch => {
     loginRequest(payload)
-      .then((response) => {
-        response.json()
-          .then((token) => {
-            dispatch(login(token))
-            console.log('logged in')
-        })
+      .then(response => {
+        response.json().then(token => {
+          dispatch(login(token));
+          console.log("logged in");
+        });
       })
-      .catch((error) => {
-        console.log('login error: ', error)
-      })}
-}
+      .catch(error => {
+        console.log("login error: ", error);
+      });
+  };
+};
 
-const login = (token) => ({
-  type: 'LOGIN',
+const login = token => ({
+  type: "LOGIN",
   token: token
-})
+});
 
 //async logout function
 const logout = () => ({
-  type: 'LOGOUT'
-})
+  type: "LOGOUT"
+});
 
-export { startLogin, logout }
+export { startLogin, logout };

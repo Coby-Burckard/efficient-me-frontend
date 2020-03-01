@@ -1,16 +1,16 @@
-import { createReducer } from '@reduxjs/toolkit'
+import { createReducer } from "@reduxjs/toolkit";
 
 const defaultState = {
-  user: ''
-}
+  user: ""
+};
 
 const userReducer = createReducer(defaultState, {
   LOGIN: (state, action) => {
-    state.user = action.token
+    state.user = action.token;
   },
-  LOGOUT: (state) => {
-    state.user = ''
+  LOGOUT: state => {
+    state.user = "";
   }
-})
+});
 
-export { userReducer as default }
+export { userReducer as default };
