@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { startLogin, logout } from "../actions/user";
-import UserPage from "./UserPage";
 
 const LogInOutButton = () => {
   const dispatch = useDispatch();
