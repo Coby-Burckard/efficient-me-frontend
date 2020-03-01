@@ -1,4 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
+import { localLogin, localLogout } from "../ajaxOrLocal/user";
 
 const defaultState = {
   user: ""
@@ -6,9 +7,11 @@ const defaultState = {
 
 const userReducer = createReducer(defaultState, {
   LOGIN: (state, action) => {
+    localLogin(action.token);
     state.user = action.token;
   },
   LOGOUT: state => {
+    localLogout();
     state.user = "";
   }
 });

@@ -4,14 +4,14 @@ import { Provider } from "react-redux";
 import "./index.scss";
 import configureStore from "./store/store";
 import AppRouter from "./routers/AppRouter";
+import InitializeUser from "./components/InitializeUser";
 
 //setting up the store
 const store = configureStore();
 
-console.log(store);
-
 const app = (
   <Provider store={store}>
+    <InitializeUser />
     <AppRouter />
   </Provider>
 );

@@ -4,7 +4,7 @@ import { startLoadUserData } from "../actions/userData";
 
 const UserPage = () => {
   const dispatch = useDispatch();
-  const token = useSelector(state => state.user.user.token);
+  const token = useSelector(state => state.user.user);
   dispatch(startLoadUserData(token));
 
   return <div>UserPage</div>;

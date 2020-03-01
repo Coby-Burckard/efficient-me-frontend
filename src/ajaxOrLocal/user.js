@@ -13,4 +13,20 @@ const loginRequest = ({ userName = "", password = "" }) => {
   });
 };
 
-export { loginRequest };
+const localAuth = () => {
+  let localToken = localStorage.getItem("token");
+  if (!localToken) {
+    localToken = "";
+  }
+  return localToken;
+};
+
+const localLogin = token => {
+  localStorage.setItem("token", token);
+};
+
+const localLogout = () => {
+  localStorage.removeItem("token");
+};
+
+export { loginRequest, localLogin, localLogout, localAuth };
