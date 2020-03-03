@@ -3,13 +3,15 @@ import { useSelector } from "react-redux";
 import LongTermGoal from "./LongTermGoal";
 
 const UserPage = () => {
-  const longTermGoals = useSelector(store => store.data.activities);
-
+  const longTermGoals = useSelector(store => store.data.entities.activities);
   return (
     <div>
-      {longTermGoals.map(LTG => {
-        return <LongTermGoal key={LTG.id} {...LTG} />;
-      })}
+      {
+        Object.keys(longTermGoals).map(ltgKey => {
+          const LTG = longTermGoals[ltgKey]
+          return <LongTermGoal key={LTG.id} {...LTG} />
+        })
+      }
     </div>
   );
 };
