@@ -1,11 +1,12 @@
 import { createReducer } from "@reduxjs/toolkit";
 import { normalize, schema } from 'normalizr'
+import timeSubReducer from './subReducers/times'
 
 const defaultState = {
   entities: {
-    times: [],
-    goals: [],
-    activities: []
+    times: {},
+    goals: {},
+    activities: {}
   }
 };
 
@@ -28,11 +29,27 @@ const normalizeData = (data) => {
   return normalize(data, [activity])
 }
 
+const patchNormalizr = (data) => {
+  if (!data.entities.times) {
+    data.entities['times'] = {}
+  }
+  if (!data.entities.goals) {
+    data.entities['goals'] = {}
+  }
+  if (!data.entities.activities) {
+    data.entities['activities'] = {}
+  }
+
+  return data
+}
+
 const userData = createReducer(defaultState, {
   LOAD_USER_DATA: (state, action) => {
     const normData = normalizeData(action.userData)
-    state.entities = normData.entities;
-  }
+    const patchedData = patchNormalizr(normData)
+    state.entities = patchedData.entities;
+  },
+  ...timeSubReducer
 });
 
 export { userData as default };

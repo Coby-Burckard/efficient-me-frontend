@@ -8,11 +8,11 @@ const fetchAddTime = (token, time) => {
       Authorization: `Token ${token}`
     },
     body: JSON.stringify({
-      title: `${time.title}`,
-      description: `${time.description}`,
-      goal: `${time.goalID}`,
-      date_completed: `${time.dateTime}`,
-      time_speant: `${time.hours}`
+      title: time.title,
+      description: time.description, 
+      goal: time.goal,
+      date_completed: time.date_completed,
+      time_speant: time.time_speant
     })
   });
 };
@@ -25,17 +25,17 @@ const fetchEditTime = (token, time) => {
       Authorization: `Token ${token}`
     },
     body: JSON.stringify({
-      title: `${time.title}`,
-      description: `${time.description}`,
-      goal: `${time.goalID}`,
-      date_completed: `${time.dateTime}`,
-      time_speant: `${time.hours}`
+      title: time.title,
+      description: time.description, 
+      goal: time.goal,
+      date_completed: time.date_completed,
+      time_speant: time.time_speant
     })
   });
 };
 
-const fetchRemoveTime = (token, time) => {
-  return fetch(`${hostURL}/api/timeallocations/${time.id}`, {
+const fetchDeleteTime = (token, time) => {
+  return fetch(`${hostURL}/api/timeallocations/${time}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -44,4 +44,4 @@ const fetchRemoveTime = (token, time) => {
   });
 };
 
-export { fetchAddTime, fetchEditTime, fetchRemoveTime };
+export { fetchAddTime, fetchEditTime, fetchDeleteTime };

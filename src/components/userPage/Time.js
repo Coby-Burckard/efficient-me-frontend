@@ -1,7 +1,13 @@
 import React from "react";
+import DeleteTimeButton from './DeleteTimeButton'
 
 const Time = props => {
-  return <p>{props.description}</p>;
+  return (
+    <div>
+      <p>{props.description}</p>
+      <DeleteTimeButton id={props.id} goalID={props.goal}/>
+    </div>
+  );
 };
 
 export default Time;
