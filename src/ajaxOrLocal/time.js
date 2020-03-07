@@ -17,9 +17,10 @@ const fetchAddTime = (token, time) => {
   });
 };
 
-const fetchEditTime = (token, time) => {
-  return fetch(`${hostURL}/api/timeallocations/${time.id}`, {
-    method: "POST",
+const fetchEditTime = (token, time, id) => {
+  console.log(id)
+  return fetch(`${hostURL}/api/timeallocations/${id}`, {
+    method: "PATCH",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Token ${token}`

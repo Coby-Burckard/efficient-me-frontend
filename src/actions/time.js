@@ -22,11 +22,13 @@ const addTime = time => ({
   time
 });
 
-const startEditTime = (token, time) => {
+const startEditTime = (token, time, id) => {
   return dispatch => {
-    fetchEditTime(token, time)
+    fetchEditTime(token, time, id)
       .then(response => {
-        // needs error handeling
+        if (response.status !== 200){
+          throw new Error('Error editing time: ', response.status)
+        }
         return response.json()
       })
       .then(responseJSON => dispatch(editTime(responseJSON)))

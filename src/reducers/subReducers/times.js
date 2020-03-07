@@ -12,8 +12,6 @@ const timeSubReducer = {
     delete state.entities.times[timeID]
     const list = state.entities.goals[goalID].timeallocation_set
     const newList = list.filter(ta => {
-      console.log(ta, timeID)
-      console.log((ta === timeID) ? false : true)
       return ta === timeID ? false : true
     })
     state.entities.goals[goalID].timeallocation_set = newList
