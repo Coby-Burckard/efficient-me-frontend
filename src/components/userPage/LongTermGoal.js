@@ -9,8 +9,7 @@ import DeleteGoalButton from './DeleteGoalButton'
 const LongTermGoal = props => {
   const allGoals = useSelector(state => state.data.entities.goals)
   const matchedGoals = selectByKey(allGoals, props.goal_set)
-
-  console.log(props)
+  
   return (
     <div>
       <p>Add new goal</p>

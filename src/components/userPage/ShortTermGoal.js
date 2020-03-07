@@ -13,7 +13,7 @@ const ShortTermGoal = props => {
   return (
     <div>
       <p>- {props.description}</p>
-      {/* <TimeForm onSubmit={startAddTime} goalID={props.id}/> */}
+      <TimeForm onSubmit={startAddTime} goalID={props.id}/>
       <ol>
         {matchedTimes.map(time => <Time key={time.id} {...time}/>)}
       </ol>

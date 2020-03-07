@@ -8,7 +8,7 @@ const startAddTime = (token, time) => {
   return dispatch => {
     fetchAddTime(token, time)
       .then(response => {
-        if (response.status != 201) {
+        if (response.status !== 201) {
           throw new Error('Error adding time to the db: ', response.status)
         }
         return response.json()

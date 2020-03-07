@@ -2,6 +2,7 @@ import { createReducer } from "@reduxjs/toolkit";
 import { normalize, schema } from 'normalizr'
 import timeSubReducer from './subReducers/times'
 import goalSubReducer from './subReducers/goals'
+import activitySubReducer from "./subReducers/activities";
 
 const defaultState = {
   entities: {
@@ -51,7 +52,8 @@ const userData = createReducer(defaultState, {
     state.entities = patchedData.entities;
   },
   ...timeSubReducer,
-  ...goalSubReducer
+  ...goalSubReducer,
+  ...activitySubReducer
 });
 
 export { userData as default };
