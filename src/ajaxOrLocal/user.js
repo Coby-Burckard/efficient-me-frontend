@@ -29,4 +29,13 @@ const localLogout = () => {
   localStorage.removeItem("token");
 };
 
-export { loginRequest, localLogin, localLogout, localAuth };
+const createRequest = (user) => {
+  return fetch('http://127.0.0.1:8000/api/createUser/', {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(user)})
+}
+
+export { loginRequest, localLogin, localLogout, localAuth, createRequest };

@@ -1,4 +1,4 @@
-import { loginRequest, localAuth } from "../ajaxOrLocal/user";
+import { loginRequest, localAuth, createRequest } from "../ajaxOrLocal/user";
 
 //asycn login function to log in from server
 const startLogin = payload => {
@@ -7,7 +7,6 @@ const startLogin = payload => {
       .then(response => {
         response.json().then(token => {
           dispatch(login(token.token));
-          console.log("logged in");
         });
       })
       .catch(error => {
@@ -23,14 +22,33 @@ const startLocalLogin = () => {
   };
 };
 
-const login = token => ({
+const login = token => {
+  return {
   type: "LOGIN",
   token: token
-});
+}};
 
 //async logout function
 const logout = () => ({
   type: "LOGOUT"
 });
 
-export { login, startLocalLogin, startLogin, logout };
+const startCreateUser = (user) => {
+  return dispatch => {
+    createRequest(user)
+      .then(response => {
+        if (response.status !== 201){
+        } else {
+          return response.json()
+        }
+      })
+      .then(responseJSON => {
+        dispatch(startLogin({
+          userName: user.username,
+          password: user.password
+        }))
+      })
+  }
+}
+
+export { login, startLocalLogin, startLogin, logout, startCreateUser };
