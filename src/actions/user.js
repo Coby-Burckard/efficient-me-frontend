@@ -29,9 +29,12 @@ const login = token => {
 }};
 
 //async logout function
-const logout = () => ({
-  type: "LOGOUT"
-});
+const logout = (dispatch) => {
+  return dispatch => {
+    dispatch({type: "LOGOUT"})
+    dispatch({type: "DELETE_DATA"})
+  }
+};
 
 const startCreateUser = (user) => {
   return dispatch => {

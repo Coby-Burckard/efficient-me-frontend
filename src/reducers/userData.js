@@ -51,6 +51,13 @@ const userData = createReducer(defaultState, {
     const patchedData = patchNormalizr(normData)
     state.entities = patchedData.entities;
   },
+  DELETE_DATA: (state, action) => {
+    state.entities = {
+      times: {},
+      goals: {},
+      activities: {}
+    }
+  },
   ...timeSubReducer,
   ...goalSubReducer,
   ...activitySubReducer
