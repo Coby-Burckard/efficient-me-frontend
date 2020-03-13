@@ -1,12 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import LogInOutButton from "./LogInOutButton";
+import logo from './svg/logo.svg'
 
 const Header = () => (
-  <div>
-    <NavLink to="/">Home</NavLink>
-    <NavLink to="/userpage">User Page</NavLink>
-    <LogInOutButton />
+  <div className="header">
+    <div className="content-container">
+      <div className="header__body">
+        <img className="header__logo" src={logo} alt="logo" />
+        <LogInOutButton />
+      </div>
+    </div>
   </div>
 );
 
