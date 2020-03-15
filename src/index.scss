@@ -1,3 +1,6 @@
-@import './styles/base/settings';
-@import './styles/base/reusables';
-@import './styles/components/header'
+@import "../node_modules/normalize-scss/sass/normalize/import-now";
+@import "./styles/base/settings";
+@import "./styles/base/generics";
+@import "./styles/base/reusables";
+@import "./styles/components/button";
+@import "./styles/components/header";

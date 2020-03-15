@@ -1,16 +1,37 @@
 .header {
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .header__body {
-    align-items: center;
-    display: flex;
-    width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header__side {
+  display: flex;
+  align-items: center;
 }
 
 .header__logo {
-    height: $l-size;
-    padding: $s-size;
-    width: $l-size;
+  height: $ml-size;
+  padding: $s-size;
+  width: $ml-size;
+}
+
+.header__title {
+  font-size: $m-size;
+  font-weight: normal;
+}
+
+.header__subtitle {
+  text-decoration: none;
+  font-size: $s-size;
+  padding: 0 $m-size;
+
+  &:focus {
+    outline: none !important;
+  }
 }
