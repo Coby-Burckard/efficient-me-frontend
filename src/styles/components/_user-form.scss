@@ -1,0 +1,55 @@
+.user-form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.user-form__container {
+  display: flex;
+  flex-wrap: auto;
+  margin: 0;
+  max-width: 20rem;
+  max-height: 20rem;
+
+  @media (min-width: $desktop-breakpoint) {
+    margin-top: 10rem;
+  }
+
+  form {
+    height: 100%;
+    width: 100%;
+
+    > input {
+      border-width: 0 0 2px;
+      border-color: $base-blue;
+      color: $light-grey;
+      font-size: $s-size;
+      padding: $s-size 0;
+      margin-bottom: 0;
+      width: 100%;
+      outline: 0;
+
+      @media (min-width: $desktop-breakpoint) {
+        font-size: $m-size;
+        margin-bottom: $s-size;
+      }
+    }
+
+    > .user-form__name {
+      width: 45%;
+    }
+
+    > .user-form__name:first-of-type {
+      margin-right: 10%;
+    }
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: $s-size;
+  width: 100%;
+}

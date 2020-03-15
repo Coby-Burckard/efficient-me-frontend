@@ -116,7 +116,7 @@
       >
       <rect
           id="rect5840"
-          style="stroke-linejoin:round;stroke:#44aa00;stroke-width:80px;fill:none"
+          style="stroke-linejoin:round;stroke:#007685;stroke-width:80px;fill:none"
           ry="1.5381"
           height="600"
           width="600"
@@ -129,88 +129,88 @@
         >
         <g
             id="g5890"
-            style="stroke:#44aa00;fill:#44aa00"
+            style="stroke:#007685;fill:#007685"
             transform="matrix(2.6337 0 0 2.6337 85.958 -1217.3)"
           >
           <path
               id="path5853"
-              style="stroke:#44aa00;stroke-linecap:round;stroke-width:1px;fill:#44aa00"
+              style="stroke:#007685;stroke-linecap:round;stroke-width:1px;fill:#007685"
               d="m225.09 656.05h5"
           />
           <path
               id="path5857"
-              style="stroke:#44aa00;stroke-linecap:round;stroke-width:1px;fill:#44aa00"
+              style="stroke:#007685;stroke-linecap:round;stroke-width:1px;fill:#007685"
               d="m218.48 650.16v-5"
           />
           <path
               id="path5861"
               sodipodi:nodetypes="cc"
-              style="stroke:#44aa00;stroke-linecap:round;stroke-width:1px;fill:#44aa00"
+              style="stroke:#007685;stroke-linecap:round;stroke-width:1px;fill:#007685"
               d="m223.59 651.66 1.9284-1.6605"
           />
           <g
               id="g5869"
-              style="stroke:#44aa00;fill:#44aa00"
+              style="stroke:#007685;fill:#007685"
               transform="matrix(0 1 -1 0 875.24 437.56)"
             >
             <path
                 id="path5863"
-                style="stroke:#44aa00;stroke-linecap:round;stroke-width:1px;fill:#44aa00"
+                style="stroke:#007685;stroke-linecap:round;stroke-width:1px;fill:#007685"
                 d="m225.09 656.05h5"
             />
             <path
                 id="path5865"
-                style="stroke:#44aa00;stroke-linecap:round;stroke-width:1px;fill:#44aa00"
+                style="stroke:#007685;stroke-linecap:round;stroke-width:1px;fill:#007685"
                 d="m218.48 650.16v-5"
             />
             <path
                 id="path5867"
                 sodipodi:nodetypes="cc"
-                style="stroke:#44aa00;stroke-linecap:round;stroke-width:1px;fill:#44aa00"
+                style="stroke:#007685;stroke-linecap:round;stroke-width:1px;fill:#007685"
                 d="m223.59 651.66 1.9284-1.6605"
             />
           </g>
           <g
               id="g5874"
-              style="stroke:#44aa00;fill:#44aa00"
+              style="stroke:#007685;fill:#007685"
               transform="matrix(0 -1 1 0 -437.57 875.23)"
             >
             <path
                 id="path5876"
-                style="stroke:#44aa00;stroke-linecap:round;stroke-width:1px;fill:#44aa00"
+                style="stroke:#007685;stroke-linecap:round;stroke-width:1px;fill:#007685"
                 d="m225.09 656.05h5"
             />
             <path
                 id="path5878"
-                style="stroke:#44aa00;stroke-linecap:round;stroke-width:1px;fill:#44aa00"
+                style="stroke:#007685;stroke-linecap:round;stroke-width:1px;fill:#007685"
                 d="m218.48 650.16v-5"
             />
             <path
                 id="path5880"
                 sodipodi:nodetypes="cc"
-                style="stroke:#44aa00;stroke-linecap:round;stroke-width:1px;fill:#44aa00"
+                style="stroke:#007685;stroke-linecap:round;stroke-width:1px;fill:#007685"
                 d="m223.59 651.66 1.9284-1.6605"
             />
           </g>
           <g
               id="g5882"
-              style="stroke:#44aa00;fill:#44aa00"
+              style="stroke:#007685;fill:#007685"
               transform="matrix(-1 0 0 -1 437.85 1312.8)"
             >
             <path
                 id="path5884"
-                style="stroke:#44aa00;stroke-linecap:round;stroke-width:1px;fill:#44aa00"
+                style="stroke:#007685;stroke-linecap:round;stroke-width:1px;fill:#007685"
                 d="m225.09 656.05h5"
             />
             <path
                 id="path5886"
-                style="stroke:#44aa00;stroke-linecap:round;stroke-width:1px;fill:#44aa00"
+                style="stroke:#007685;stroke-linecap:round;stroke-width:1px;fill:#007685"
                 d="m218.48 650.16v-5"
             />
             <path
                 id="path5888"
                 sodipodi:nodetypes="cc"
-                style="stroke:#44aa00;stroke-linecap:round;stroke-width:1px;fill:#44aa00"
+                style="stroke:#007685;stroke-linecap:round;stroke-width:1px;fill:#007685"
                 d="m223.59 651.66 1.9284-1.6605"
             />
           </g>
@@ -221,23 +221,23 @@
           >
           <path
               id="path5909"
-              style="fill:#44aa00"
+              style="fill:#007685"
               d="m228.06 498.96c0.6494 11.831 10.444 21.219 22.438 21.219 11.993 0 21.819-9.3879 22.469-21.219h-44.906z"
           />
           <path
               id="rect5911"
-              style="fill:#44aa00"
+              style="fill:#007685"
               transform="translate(5.802 124.9)"
               d="m232.34 357.9c1.3991 0 2.5254 1.1263 2.5254 2.5254v14.142c0 1.3991-1.1263 2.5254-2.5254 2.5254s-2.5254-1.1263-2.5254-2.5254v-14.142c0-1.3991 1.1263-2.5254 2.5254-2.5254z"
           />
           <path
               id="rect5913"
-              style="fill:#44aa00"
+              style="fill:#007685"
               d="m262.14 482.8c1.3991 0 2.5254 1.1263 2.5254 2.5254v14.142c0 1.3991-1.1263 2.5254-2.5254 2.5254s-2.5254-1.1263-2.5254-2.5254v-14.142c0-1.3991 1.1263-2.5254 2.5254-2.5254z"
           />
           <path
               id="rect5915"
-              style="fill:#44aa00"
+              style="fill:#007685"
               transform="translate(5.802 124.9)"
               d="m237.89 388.45h14.773c1.3991 0 2.5254 1.1263 2.5254 2.5254v14.773c0 1.3991-1.1263 2.5254-2.5254 2.5254h-14.773c-1.3991 0-2.5254-1.1263-2.5254-2.5254v-14.773c0-1.3991 1.1263-2.5254 2.5254-2.5254z"
           />

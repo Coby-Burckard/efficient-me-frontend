@@ -1,6 +1,12 @@
 .link-button {
   background: none;
   border: none;
-  padding: 0 $s-size;
   font-size: $s-size;
+  outline: none;
+  padding: 0 $s-size;
+}
+
+.link-button--submit {
+  font-size: $m-size;
+  align-self: flex-end;
 }
