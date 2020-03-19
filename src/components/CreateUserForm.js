@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { startCreateUser } from "../actions/user";
 
 const LoginForm = () => {
@@ -8,6 +8,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [first, setFirst] = useState("");
   const [last, setLast] = useState("");
+  const error = useSelector(state => state.user.createError);
 
   const onUserNameChange = e => {
     setUserName(e.target.value);
@@ -67,6 +68,7 @@ const LoginForm = () => {
             onChange={onPasswordChange}
             placeholder="Password"
           />
+          {!!error && <p className="user-form__error">{error}</p>}
           <div className="button-container">
             <button className="link-button link-button--submit" type="submit">
               Create

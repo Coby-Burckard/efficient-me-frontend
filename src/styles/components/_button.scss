@@ -4,9 +4,23 @@
   font-size: $s-size;
   outline: none;
   padding: 0 $s-size;
+  cursor: pointer;
 }
 
 .link-button--submit {
   font-size: $m-size;
   align-self: flex-end;
+}
+
+.bold-button {
+  background: $base-blue;
+  border: none;
+  border-radius: 1.5rem;
+  outline: none;
+  color: white;
+  font-size: $s-size;
+  // font-weight: bold;
+  height: 3rem;
+  padding: 0 $xs-size;
+  width: 8rem;
 }

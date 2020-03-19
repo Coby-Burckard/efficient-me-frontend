@@ -1,5 +1,19 @@
 .content-container {
-    padding: 0 $m-size;
-    margin: 0 auto;
-    max-width: 80rem;
+  padding: 0 $m-size;
+  margin: 0 auto;
+  max-width: 80rem;
+}
+
+.content-container--s {
+  @extend .content-container;
+  max-width: 70rem;
+}
+
+.body-container {
+  margin: $s-size $s-size;
+  display: flex;
+
+  @media (min-width: $desktop-breakpoint) {
+    margin: $l-size $m-size;
+  }
 }

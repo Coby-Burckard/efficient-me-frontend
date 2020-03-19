@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import Headline from "./Headline";
 
 const HomePage = () => {
   return (
     <div>
-      <h1>Home Page</h1>
+      <Headline />
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

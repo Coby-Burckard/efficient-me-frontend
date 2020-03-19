@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { startLogin } from "../actions/user";
+import { useHistory } from "react-router-dom";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const error = useSelector(state => state.user.loginError);
 
   const onUserNameChange = e => {
     setUserName(e.target.value);
@@ -25,6 +28,10 @@ const LoginForm = () => {
     );
   };
 
+  const onSignUpClick = e => {
+    history.push("/create");
+  };
+
   return (
     <div className="user-form">
       <div className="user-form__container">
@@ -41,9 +48,16 @@ const LoginForm = () => {
             onChange={onPasswordChange}
             placeholder="Password"
           />
+          {!!error && <p className="user-form__error">{error}</p>}
           <div className="button-container">
             <button className="link-button link-button--submit" type="submit">
               Login
+            </button>
+            <button
+              className="link-button link-button--submit"
+              onClick={onSignUpClick}
+            >
+              Sign up
             </button>
           </div>
         </form>
