@@ -1,6 +1,9 @@
 // colors
-$light-grey: #2b292d;
+$light-grey: #003037;
+$text-grey: #808080;
+$base-dark: #003037;
 $base-blue: #007685;
+$base-light: lighten($base-blue, 25%);
 
 // font size
 $font-size-l: 1.8rem;

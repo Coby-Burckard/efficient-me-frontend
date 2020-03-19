@@ -1,0 +1,36 @@
+.headline__section {
+  width: 50%;
+}
+
+.headline__section--img {
+  @extend .headline__section;
+}
+
+.headline__title {
+  font-size: $l-size;
+  margin: $l-size 0 $m-size 0;
+  padding: 0;
+  padding: 0;
+}
+
+.headline__subtitle {
+  // color: lighten($color: $light-grey, $amount: 25%);
+  color: $text-grey;
+  font-size: $s-size;
+  font-weight: normal;
+  margin: $m-size 0;
+}
+
+.headline__subtitle--app-name {
+  @extend .headline__subtitle;
+  font-style: italic;
+}
+
+.headline__section--text {
+  @extend .headline__section;
+}
+
+.headline__img {
+  height: auto;
+  width: 100%;
+}
