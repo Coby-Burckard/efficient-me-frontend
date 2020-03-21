@@ -10,10 +10,19 @@
 }
 
 .body-container {
-  margin: $s-size $s-size;
+  padding: $s-size $s-size;
   display: flex;
+  height: 90vh;
 
   @media (min-width: $desktop-breakpoint) {
-    margin: $l-size $m-size;
+    margin: $xl-size $m-size;
   }
+}
+
+.body-container:first-of-type {
+  height: 60vh;
+}
+
+.body-container:last-of-type {
+  height: 70vh;
 }

@@ -1,0 +1,45 @@
+.goals-description__img-container {
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.goals-description__subsection {
+  border: 6px solid $base-dark;
+  border-radius: 5rem;
+  display: flex;
+  margin: 0 0 $s-size 0;
+  padding: 0;
+  width: 70%;
+  justify-content: space-evenly;
+}
+
+.goals-description__subsection--short {
+  align-self: flex-end;
+  border-color: $base-blue;
+}
+
+.goals-description__subsection--time {
+  border-color: $base-light;
+}
+
+.goals-description__text {
+  font-size: $m-size;
+  margin: $ml-size 0;
+  width: 30rem;
+  line-height: 2rem;
+  justify-items: center;
+  letter-spacing: 2px;
+}
+
+.goals-description__text--short {
+  margin-left: 1.5rem;
+  color: $base-blue;
+}
+
+.goals-description__text--time {
+  margin-left: -2rem;
+  color: $base-light;
+}

@@ -1,0 +1,20 @@
+.svg__home-page {
+  width: auto;
+}
+
+.svg--time {
+  @extend .svg__home-page;
+  transform: translate(-20px, 0);
+}
+
+.svg--short {
+  @extend .svg__home-page;
+  margin: $s-size 0;
+  height: 6rem;
+}
+
+.svg--long {
+  @extend .svg__home-page;
+  height: 7rem;
+  margin: $s-size 0;
+}

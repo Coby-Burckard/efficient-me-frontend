@@ -5,11 +5,23 @@
   outline: none;
   padding: 0 $s-size;
   cursor: pointer;
+  transition: 0.05s ease-in;
+
+  &:hover {
+    transform: scale(1.1);
+    color: $base-light;
+  }
 }
 
 .link-button--submit {
-  font-size: $m-size;
   align-self: flex-end;
+  font-size: $m-size;
+  transition: 0.05s ease-in;
+
+  &:hover {
+    transform: scale(1.1);
+    color: $base-light;
+  }
 }
 
 .bold-button {
@@ -23,4 +35,10 @@
   height: 3rem;
   padding: 0 $xs-size;
   width: 8rem;
+  transition: 0.05s ease-in;
+
+  &:hover {
+    transform: scale(1.1);
+    background-color: $base-light;
+  }
 }
