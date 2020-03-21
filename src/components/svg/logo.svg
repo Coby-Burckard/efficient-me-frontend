@@ -1,317 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
 <svg
-    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-    xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/"
-    xmlns:cc="http://creativecommons.org/ns#"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    xmlns:dc="http://purl.org/dc/elements/1.1/"
-    xmlns:svg="http://www.w3.org/2000/svg"
-    xmlns:ns1="http://sozi.baierouge.fr"
-    id="svg2"
-    sodipodi:docname="eco_systemedic_energy_B.svg"
-    viewBox="0 0 610 610"
-    version="1.1"
-    inkscape:version="0.47 r22583"
-  >
-  <sodipodi:namedview
-      id="base"
-      inkscape:zoom="0.70000002"
-      borderopacity="1.0"
-      inkscape:current-layer="layer4"
-      inkscape:cx="-60.283316"
-      guidetolerance="10"
-      inkscape:window-maximized="0"
-      showgrid="true"
-      inkscape:guide-bbox="true"
-      showguides="true"
-      bordercolor="#666666"
-      inkscape:window-x="0"
-      inkscape:window-y="0"
-      objecttolerance="1"
-      inkscape:window-width="1680"
-      inkscape:pageopacity="0.0"
-      inkscape:pageshadow="2"
-      pagecolor="#ffffff"
-      gridtolerance="3"
-      inkscape:cy="307.96481"
-      inkscape:document-units="px"
-      inkscape:window-height="1025"
-    >
-    <sodipodi:guide
-        id="guide4755"
-        position="5,715"
-        orientation="1,0"
-    />
-    <sodipodi:guide
-        id="guide4757"
-        position="605,835"
-        orientation="1,0"
-    />
-    <sodipodi:guide
-        id="guide4761"
-        position="889.89361,890.40123"
-        orientation="0,1"
-    />
-    <inkscape:grid
-        id="grid5833"
-        enabled="true"
-        visible="true"
-        snapvisiblegridlinesonly="true"
-        type="xygrid"
-        empspacing="50"
-    />
-    <sodipodi:guide
-        id="guide5835"
-        position="300,708.57141"
-        orientation="1,0"
-    />
-    <sodipodi:guide
-        id="guide5842"
-        position="405.71427,300"
-        orientation="0,1"
-    />
-    <sodipodi:guide
-        id="guide5844"
-        position="505,605"
-        orientation="0,1"
-    />
-    <sodipodi:guide
-        id="guide5846"
-        position="405,5"
-        orientation="0,1"
-    />
-    <sodipodi:guide
-        id="guide5848"
-        position="50,200"
-        orientation="1,0"
-    />
-    <sodipodi:guide
-        id="guide5850"
-        position="400,550"
-        orientation="0,1"
-    />
-    <sodipodi:guide
-        id="guide5852"
-        position="550,250"
-        orientation="1,0"
-    />
-    <sodipodi:guide
-        id="guide5854"
-        position="450,50"
-        orientation="0,1"
-    />
-  </sodipodi:namedview>
-  <g
-      id="layer4"
-      inkscape:label="1"
-      inkscape:groupmode="layer"
-      transform="translate(5 -397.36)"
-    >
-    <g
-        id="g4901"
-      >
-      <rect
-          id="rect5840"
-          style="stroke-linejoin:round;stroke:#007685;stroke-width:80px;fill:none"
-          ry="1.5381"
-          height="600"
-          width="600"
-          y="402.36"
-          x="0"
-      />
-      <g
-          id="g5917"
-          transform="matrix(8.2171 0 0 8.1209 -5150.1 -3445)"
-        >
-        <g
-            id="g5890"
-            style="stroke:#007685;fill:#007685"
-            transform="matrix(2.6337 0 0 2.6337 85.958 -1217.3)"
-          >
-          <path
-              id="path5853"
-              style="stroke:#007685;stroke-linecap:round;stroke-width:1px;fill:#007685"
-              d="m225.09 656.05h5"
-          />
-          <path
-              id="path5857"
-              style="stroke:#007685;stroke-linecap:round;stroke-width:1px;fill:#007685"
-              d="m218.48 650.16v-5"
-          />
-          <path
-              id="path5861"
-              sodipodi:nodetypes="cc"
-              style="stroke:#007685;stroke-linecap:round;stroke-width:1px;fill:#007685"
-              d="m223.59 651.66 1.9284-1.6605"
-          />
-          <g
-              id="g5869"
-              style="stroke:#007685;fill:#007685"
-              transform="matrix(0 1 -1 0 875.24 437.56)"
-            >
-            <path
-                id="path5863"
-                style="stroke:#007685;stroke-linecap:round;stroke-width:1px;fill:#007685"
-                d="m225.09 656.05h5"
-            />
-            <path
-                id="path5865"
-                style="stroke:#007685;stroke-linecap:round;stroke-width:1px;fill:#007685"
-                d="m218.48 650.16v-5"
-            />
-            <path
-                id="path5867"
-                sodipodi:nodetypes="cc"
-                style="stroke:#007685;stroke-linecap:round;stroke-width:1px;fill:#007685"
-                d="m223.59 651.66 1.9284-1.6605"
-            />
-          </g>
-          <g
-              id="g5874"
-              style="stroke:#007685;fill:#007685"
-              transform="matrix(0 -1 1 0 -437.57 875.23)"
-            >
-            <path
-                id="path5876"
-                style="stroke:#007685;stroke-linecap:round;stroke-width:1px;fill:#007685"
-                d="m225.09 656.05h5"
-            />
-            <path
-                id="path5878"
-                style="stroke:#007685;stroke-linecap:round;stroke-width:1px;fill:#007685"
-                d="m218.48 650.16v-5"
-            />
-            <path
-                id="path5880"
-                sodipodi:nodetypes="cc"
-                style="stroke:#007685;stroke-linecap:round;stroke-width:1px;fill:#007685"
-                d="m223.59 651.66 1.9284-1.6605"
-            />
-          </g>
-          <g
-              id="g5882"
-              style="stroke:#007685;fill:#007685"
-              transform="matrix(-1 0 0 -1 437.85 1312.8)"
-            >
-            <path
-                id="path5884"
-                style="stroke:#007685;stroke-linecap:round;stroke-width:1px;fill:#007685"
-                d="m225.09 656.05h5"
-            />
-            <path
-                id="path5886"
-                style="stroke:#007685;stroke-linecap:round;stroke-width:1px;fill:#007685"
-                d="m218.48 650.16v-5"
-            />
-            <path
-                id="path5888"
-                sodipodi:nodetypes="cc"
-                style="stroke:#007685;stroke-linecap:round;stroke-width:1px;fill:#007685"
-                d="m223.59 651.66 1.9284-1.6605"
-            />
-          </g>
-        </g>
-        <g
-            id="g5907"
-            transform="matrix(.36375 0 0 .36375 571.87 326.61)"
-          >
-          <path
-              id="path5909"
-              style="fill:#007685"
-              d="m228.06 498.96c0.6494 11.831 10.444 21.219 22.438 21.219 11.993 0 21.819-9.3879 22.469-21.219h-44.906z"
-          />
-          <path
-              id="rect5911"
-              style="fill:#007685"
-              transform="translate(5.802 124.9)"
-              d="m232.34 357.9c1.3991 0 2.5254 1.1263 2.5254 2.5254v14.142c0 1.3991-1.1263 2.5254-2.5254 2.5254s-2.5254-1.1263-2.5254-2.5254v-14.142c0-1.3991 1.1263-2.5254 2.5254-2.5254z"
-          />
-          <path
-              id="rect5913"
-              style="fill:#007685"
-              d="m262.14 482.8c1.3991 0 2.5254 1.1263 2.5254 2.5254v14.142c0 1.3991-1.1263 2.5254-2.5254 2.5254s-2.5254-1.1263-2.5254-2.5254v-14.142c0-1.3991 1.1263-2.5254 2.5254-2.5254z"
-          />
-          <path
-              id="rect5915"
-              style="fill:#007685"
-              transform="translate(5.802 124.9)"
-              d="m237.89 388.45h14.773c1.3991 0 2.5254 1.1263 2.5254 2.5254v14.773c0 1.3991-1.1263 2.5254-2.5254 2.5254h-14.773c-1.3991 0-2.5254-1.1263-2.5254-2.5254v-14.773c0-1.3991 1.1263-2.5254 2.5254-2.5254z"
-          />
-        </g>
-      </g>
-    </g>
-  </g>
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   id="svg2"
+   height="32"
+   width="32">
+  <defs
+     id="defs4" />
   <metadata
-    >
-    <rdf:RDF
-      >
+     id="metadata7">
+    <rdf:RDF>
       <cc:Work
-        >
-        <dc:format
-          >image/svg+xml</dc:format>
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
         <dc:type
-            rdf:resource="http://purl.org/dc/dcmitype/StillImage"
-        />
-        <cc:license
-            rdf:resource="http://creativecommons.org/licenses/publicdomain/"
-        />
-        <dc:publisher
-          >
-          <cc:Agent
-              rdf:about="http://openclipart.org/"
-            >
-            <dc:title
-              >Openclipart</dc:title>
-          </cc:Agent>
-        </dc:publisher>
-        <dc:title
-          >eco green energy icon\n</dc:title>
-        <dc:date
-          >2012-05-26T16:44:45</dc:date>
-        <dc:description
-        />
-        <dc:source
-          >https://openclipart.org/detail/170224/eco-systemdic-energy-by-cybergedeon-170224</dc:source>
-        <dc:creator
-          >
-          <cc:Agent
-            >
-            <dc:title
-              >dominiquechappard</dc:title>
-          </cc:Agent>
-        </dc:creator>
-        <dc:subject
-          >
-          <rdf:Bag
-            >
-            <rdf:li
-              >ecology</rdf:li>
-            <rdf:li
-              >energy</rdf:li>
-            <rdf:li
-              >green</rdf:li>
-            <rdf:li
-              >icon</rdf:li>
-          </rdf:Bag>
-        </dc:subject>
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
-      <cc:License
-          rdf:about="http://creativecommons.org/licenses/publicdomain/"
-        >
-        <cc:permits
-            rdf:resource="http://creativecommons.org/ns#Reproduction"
-        />
-        <cc:permits
-            rdf:resource="http://creativecommons.org/ns#Distribution"
-        />
-        <cc:permits
-            rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
-        />
-      </cc:License>
     </rdf:RDF>
   </metadata>
+  <path
+     id="path3339"
+     fill="#007685"
+     d="M 19.9375 0.24804688 C 19.740589 0.27223745 19.527888 0.35950276 19.296875 0.52734375 C 17.448768 1.8700717 20.901227 3.5910923 20.195312 5.7636719 C 19.489398 7.9362514 15.684711 7.3000767 16.390625 9.4726562 C 17.096539 11.645236 19.800331 8.8936 21.648438 10.236328 C 23.496544 11.579056 21.715615 15 24 15 C 26.284385 15 24.503456 11.579056 26.351562 10.236328 C 28.199669 8.8936 30.903461 11.645236 31.609375 9.4726562 C 32.315289 7.3000766 28.510601 7.9362516 27.804688 5.7636719 C 27.098774 3.5910923 30.551231 1.8700718 28.703125 0.52734375 C 26.855018 -0.81538437 26.284385 3 24 3 C 22.001163 3 21.31588 0.078712883 19.9375 0.24804688 z M 24 5 A 2 2 0 0 1 26 7 A 2 2 0 0 1 24 9 A 2 2 0 0 1 22 7 A 2 2 0 0 1 24 5 z " />
+  <path
+     id="path3347"
+     fill="#007685"
+     d="M 12 8 C 9.6207696 8 11.137575 11.698883 8.9394531 12.609375 C 6.7413307 13.519867 5.1979951 9.8332551 3.515625 11.515625 C 1.833255 13.197995 5.5198671 14.741331 4.609375 16.939453 C 3.6988828 19.137575 0 17.62077 0 20 C 0 22.37923 3.698883 20.862425 4.609375 23.060547 C 5.519867 25.258669 1.8332551 26.802005 3.515625 28.484375 C 5.1979949 30.166745 6.7413309 26.480133 8.9394531 27.390625 C 11.137575 28.301117 9.6207695 32 12 32 C 14.37923 32 12.862425 28.301117 15.060547 27.390625 C 17.258669 26.480133 18.802005 30.166745 20.484375 28.484375 C 22.166745 26.802005 18.480133 25.258669 19.390625 23.060547 C 20.301117 20.862425 24 22.37923 24 20 C 24 17.62077 20.301117 19.137575 19.390625 16.939453 C 18.480133 14.741331 22.166745 13.197995 20.484375 11.515625 C 18.802005 9.833255 17.258669 13.519867 15.060547 12.609375 C 12.862425 11.698883 14.37923 8 12 8 z M 12 17.5 A 2.5 2.5 0 0 1 14.5 20 A 2.5 2.5 0 0 1 12 22.5 A 2.5 2.5 0 0 1 9.5 20 A 2.5 2.5 0 0 1 12 17.5 z " />
 </svg>
