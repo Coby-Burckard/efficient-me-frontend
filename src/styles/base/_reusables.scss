@@ -12,17 +12,26 @@
 .body-container {
   padding: $s-size $s-size;
   display: flex;
-  height: 95vh;
+  height: 37vh;
 
   @media (min-width: $desktop-breakpoint) {
     margin: $xl-size $m-size;
+    height: 95vh;
   }
 }
 
 .body-container:first-of-type {
   height: 70vh;
+
+  @media (max-width: $desktop-breakpoint) {
+    height: 65vh;
+  }
 }
 
 .body-container:last-of-type {
   height: 70vh;
+
+  @media (max-width: $desktop-breakpoint) {
+    height: 70vh;
+  }
 }

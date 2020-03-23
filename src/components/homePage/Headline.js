@@ -10,7 +10,7 @@ const Headline = () => {
   };
 
   return (
-    <div className="body-container">
+    <div className="body-container body-container--headline">
       <div className="headline__section--text">
         <h1 className="headline__title">Set yourself up for success</h1>
         <h2 className="headline__subtitle">

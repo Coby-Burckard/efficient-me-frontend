@@ -1,9 +1,23 @@
+.body-container--headline {
+  @media (max-width: $desktop-breakpoint) {
+    flex-direction: column;
+  }
+}
+
 .headline__section {
   width: 50%;
+
+  @media (max-width: $desktop-breakpoint) {
+    width: 100%;
+  }
 }
 
 .headline__section--img {
   @extend .headline__section;
+
+  @media (max-width: $desktop-breakpoint) {
+    margin-top: $s-size;
+  }
 }
 
 .headline__title {
@@ -11,6 +25,11 @@
   margin: $l-size 0 $m-size 0;
   padding: 0;
   padding: 0;
+
+  @media (max-width: $desktop-breakpoint) {
+    font-size: $m-size;
+    margin: $s-size 0 $xs-size 0;
+  }
 }
 
 .headline__subtitle {
@@ -19,6 +38,11 @@
   font-size: $s-size;
   font-weight: normal;
   margin: $m-size 0;
+
+  @media (max-width: $desktop-breakpoint) {
+    font-size: $font-size-xs;
+    margin: $xs-size 0;
+  }
 }
 
 .headline__subtitle--app-name {
@@ -33,4 +57,9 @@
 .headline__img {
   height: auto;
   width: 100%;
+
+  @media (max-width: $desktop-breakpoint) {
+    max-height: 15rem;
+    width: auto;
+  }
 }

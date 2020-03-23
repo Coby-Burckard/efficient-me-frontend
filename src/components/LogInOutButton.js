@@ -17,7 +17,7 @@ const LogInOutButton = () => {
   };
 
   return (
-    <div>
+    <>
       {!!user ? (
         <button className="link-button" onClick={logoutClick}>
           Logout
@@ -29,7 +29,7 @@ const LogInOutButton = () => {
           </button>
         </>
       )}
-    </div>
+    </>
   );
 };
 

@@ -4,7 +4,7 @@
 }
 
 .header__body {
-  align-items: center;
+  align-items: stretch;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -13,25 +13,45 @@
 .header__side {
   display: flex;
   align-items: center;
+  height: 100%;
+  margin: auto 0;
 }
 
 .header__logo {
   height: $ml-size;
   padding: $s-size;
   width: $ml-size;
+
+  @media (max-width: $desktop-breakpoint) {
+    padding: $xs-size;
+    margin: 0;
+  }
 }
 
 .header__title {
   font-size: $m-size;
   font-weight: normal;
+  cursor: pointer;
 }
 
 .header__subtitle {
   text-decoration: none;
   font-size: $s-size;
   padding: 0 $m-size;
+  transition: 0.05s ease-in;
 
   &:focus {
     outline: none !important;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    color: $base-light;
+  }
+
+  @media (max-width: $desktop-breakpoint) {
+    font-size: $font-size-xs;
+    padding: 0 $xs-size 0 0;
+    text-align: center;
   }
 }

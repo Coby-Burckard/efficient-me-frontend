@@ -3,7 +3,7 @@ import thinking from "../svg/thinking.svg";
 
 const Smart = () => {
   return (
-    <div className="body-container">
+    <div className="body-container body-container--headline">
       <div className="smart__img-container">
         <img className="smart__img" src={thinking} alt="thinking" />
       </div>

@@ -14,32 +14,50 @@
   padding: 0;
   width: 70%;
   justify-content: space-evenly;
+
+  @media (max-width: $desktop-breakpoint) {
+    align-items: center;
+    border: 3px solid $base-dark;
+    padding: 0 0 0 $xs-size;
+    width: 85%;
+  }
 }
 
 .goals-description__subsection--short {
-  align-self: flex-end;
+  align-self: center;
   border-color: $base-blue;
 }
 
 .goals-description__subsection--time {
+  align-self: flex-end;
   border-color: $base-light;
 }
 
 .goals-description__text {
   font-size: $m-size;
-  margin: $ml-size 0;
-  width: 30rem;
-  line-height: 2rem;
+  margin: $m-size 0;
+  line-height: 2.5rem;
   justify-items: center;
   letter-spacing: 2px;
+  width: 30rem;
+
+  @media (max-width: $desktop-breakpoint) {
+    font-size: $xs-size;
+    line-height: 1rem;
+    margin-left: $xs-size;
+    margin: $xs-size 0;
+    padding-left: $xs-size;
+  }
 }
 
 .goals-description__text--short {
   margin-left: 1.5rem;
   color: $base-blue;
+  padding-left: 0;
 }
 
 .goals-description__text--time {
   margin-left: -2rem;
   color: $base-light;
+  padding-left: 0;
 }

@@ -1,20 +1,38 @@
 .smart__img-container {
   width: 45%;
   margin-right: 5%;
+
+  @media (max-width: $desktop-breakpoint) {
+    width: 100%;
+  }
 }
 
 .smart__img {
   width: 100%;
   height: auto;
+
+  @media (max-width: $desktop-breakpoint) {
+    max-height: 15rem;
+    width: auto;
+  }
 }
 
 .smart__text-container {
   width: 50%;
+
+  @media (max-width: $desktop-breakpoint) {
+    width: 100%;
+  }
 }
 
 .smart__title {
   font-size: $l-size;
   margin: $s-size 0;
+
+  @media (max-width: $desktop-breakpoint) {
+    font-size: $m-size;
+    margin: $m-size 0 $xs-size 0;
+  }
 }
 
 .smart__subtitle {
@@ -22,10 +40,18 @@
   letter-spacing: 2px;
   padding: 0;
   margin: 0;
+
+  @media (max-width: $desktop-breakpoint) {
+    font-size: $s-size;
+  }
 }
 
 .smart__letter {
   color: $base-blue;
   font-size: $l-size;
   padding-right: 3px;
+
+  @media (max-width: $desktop-breakpoint) {
+    font-size: $m-size;
+  }
 }

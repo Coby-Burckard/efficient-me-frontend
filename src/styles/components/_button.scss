@@ -1,15 +1,37 @@
 .link-button {
+  box-sizing: border-box;
   background: none;
   border: none;
-  font-size: $s-size;
+  font-size: $font-size-xs;
+  margin: 0 0 0 $xs-size;
   outline: none;
-  padding: 0 $s-size;
+  padding: 0;
   cursor: pointer;
   transition: 0.05s ease-in;
 
   &:hover {
     transform: scale(1.1);
     color: $base-light;
+  }
+
+  @media (min-width: $desktop-breakpoint) {
+    font-size: $s-size;
+    margin: 0;
+    padding: 0 $s-size;
+  }
+}
+
+.link-button--title {
+  font-size: $s-size;
+  font-weight: normal;
+
+  &:hover {
+    transform: none;
+    color: $base-dark;
+  }
+
+  @media (min-width: $desktop-breakpoint) {
+    font-size: $m-size;
   }
 }
 
@@ -22,6 +44,11 @@
     transform: scale(1.1);
     color: $base-light;
   }
+
+  @media (max-width: $desktop-breakpoint) {
+    font-size: $s-size;
+    padding: 0 $s-size;
+  }
 }
 
 .bold-button {
@@ -31,7 +58,6 @@
   outline: none;
   color: white;
   font-size: $s-size;
-  // font-weight: bold;
   height: 3rem;
   padding: 0 $xs-size;
   width: 8rem;
@@ -40,5 +66,11 @@
   &:hover {
     transform: scale(1.1);
     background-color: $base-light;
+  }
+
+  @media (max-width: $desktop-breakpoint) {
+    font-size: $font-size-xs;
+    height: 1.5rem;
+    width: 6rem;
   }
 }
