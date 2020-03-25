@@ -1,28 +1,36 @@
 import React from "react";
-import ShortTermGoal from "./ShortTermGoal";
 import { useSelector } from "react-redux";
-import { selectByKey } from '../../selectors/goals'
-import { startAddGoal } from "../../actions/goal";
-import GoalForm from './GoalForm'
-import DeleteGoalButton from './DeleteGoalButton'
+import { selectByKey } from "../../selectors/goals";
 
 const LongTermGoal = props => {
-  const allGoals = useSelector(state => state.data.entities.goals)
-  const matchedGoals = selectByKey(allGoals, props.goal_set)
-  
+  const allGoals = useSelector(state => state.data.entities.goals);
+  const matchedGoals = selectByKey(allGoals, props.goal_set);
+
+  const handleViewClick = () => {
+    console.log("open view page for LTG ", props.id);
+  };
+
+  const handleEditClick = () => {
+    console.log("edit LTG", props.id);
+  };
+
+  console.log(props);
   return (
-    <div>
-      <p>Add new goal</p>
-      <GoalForm onSubmit={startAddGoal} activityID={props.id} />
-      <p>{props.description}</p>
-      {matchedGoals.map(goal => {
-        return (
-        <>
-          <ShortTermGoal key={goal.id} {...goal}/>
-          <DeleteGoalButton key={goal.id + 'b'} id={goal.id} activityID={props.id}/>
-        </>
-        ) 
-      })}
+    <div className="card">
+      <div className="ltg__top-row">
+        <h2 className="ltg__title">{props.title}</h2>
+        <div className="ltg__top-row--buttons">
+          <button className="link-button" onClick={handleViewClick}>
+            View
+          </button>
+          <button className="link-button" onClick={handleEditClick}>
+            Edit
+          </button>
+        </div>
+      </div>
+      <p className="ltg__description">{props.description}</p>
+      <p className="ltg__hours">hours</p>
+      <p className="ltg__complete">complete</p>
     </div>
   );
 };
