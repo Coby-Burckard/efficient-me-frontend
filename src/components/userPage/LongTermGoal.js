@@ -1,13 +1,15 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { selectByKey } from "../../selectors/goals";
+import { useHistory } from "react-router-dom";
 
 const LongTermGoal = props => {
   const allGoals = useSelector(state => state.data.entities.goals);
   const matchedGoals = selectByKey(allGoals, props.goal_set);
+  const history = useHistory();
 
   const handleViewClick = () => {
-    console.log("open view page for LTG ", props.id);
+    history.push(`/goalpage/${props.id}`);
   };
 
   const handleEditClick = () => {

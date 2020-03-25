@@ -8,6 +8,7 @@ import StartUserPage from "../components/StartUserPage";
 import Header from "../components/Header";
 import LoginForm from "../components/LoginForm";
 import CreateUserForm from "../components/CreateUserForm";
+import GoalPage from "../components/userPage/goalPage/GoalPage";
 
 const history = createBrowserHistory();
 
@@ -20,6 +21,7 @@ const AppRouter = () => (
         <PublicRoute path="/create" exact component={CreateUserForm} />
         <PublicRoute path="/login" exact component={LoginForm} />
         <PrivateRoute path="/userpage" exact component={StartUserPage} />
+        <PrivateRoute path="/goalpage/:id" exact component={GoalPage} />
       </Switch>
     </div>
   </Router>
