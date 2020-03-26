@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import ModalBody from "../ModalBody";
+import { startDeleteActivity } from "../../actions/activity";
 
 const ActivityFrom = props => {
   const dispatch = useDispatch();
@@ -23,23 +25,37 @@ const ActivityFrom = props => {
       activity_type: [1]
     };
     dispatch(props.onSubmit(token, activity, props.id || null));
+    setTitle("");
+    setDescription("");
+    props.setIsOpen(false);
+  };
+
+  const handleDelete = e => {
+    e.preventDefault();
+    dispatch(startDeleteActivity(token, props.id));
+    props.setIsOpen(false);
   };
 
   return (
-    <form className="card" onSubmit={handleFormSubmit}>
-      <input
-        type="text"
-        placeholder="title"
-        value={title}
-        onChange={onTitleChange}
-      />
-      <textarea
-        placeholder="description"
-        value={description}
-        onChange={onDescriptionChange}
-      />
-      <button type="submit">Save Activity</button>
-    </form>
+    <>
+      <ModalBody isOpen={props.isOpen} setIsOpen={props.setIsOpen}>
+        <form className="modal__form" onSubmit={handleFormSubmit}>
+          <input
+            type="text"
+            placeholder="title"
+            value={title}
+            onChange={onTitleChange}
+          />
+          <textarea
+            placeholder="description"
+            value={description}
+            onChange={onDescriptionChange}
+          />
+          {!!props.id ? <button onClick={handleDelete}>Delete</button> : <></>}
+          <button type="submit">Save Activity</button>
+        </form>
+      </ModalBody>
+    </>
   );
 };
 

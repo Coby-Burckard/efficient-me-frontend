@@ -1,0 +1,11 @@
+.ReactModal__Overlay {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.modal {
+  display: flex;
+  background-color: $base-light;
+  padding: $m-size;
+}

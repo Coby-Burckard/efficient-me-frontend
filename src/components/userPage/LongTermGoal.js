@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { selectByKey } from "../../selectors/goals";
 import { useHistory } from "react-router-dom";
+import { startEditActivity } from "../../actions/activity";
+import { selectByKey } from "../../selectors/goals";
+import ActivityForm from "./ActivityForm";
 
 const LongTermGoal = props => {
   const allGoals = useSelector(state => state.data.entities.goals);
   const matchedGoals = selectByKey(allGoals, props.goal_set);
+  const [isOpen, setIsOpen] = useState(false);
+
   const history = useHistory();
 
   const handleViewClick = () => {
@@ -13,7 +17,7 @@ const LongTermGoal = props => {
   };
 
   const handleEditClick = () => {
-    console.log("edit LTG", props.id);
+    setIsOpen(true);
   };
 
   console.log(props);
@@ -28,6 +32,12 @@ const LongTermGoal = props => {
           <button className="link-button" onClick={handleEditClick}>
             Edit
           </button>
+          <ActivityForm
+            onSubmit={startEditActivity}
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+            {...props}
+          />
         </div>
       </div>
       <p className="ltg__description">{props.description}</p>
