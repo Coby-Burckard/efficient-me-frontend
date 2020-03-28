@@ -51,6 +51,15 @@
   }
 }
 
+.link-button--close {
+  color: $text-grey;
+}
+
+.link-button--submit-modal {
+  @extend .link-button--submit;
+  font-size: $s-size;
+}
+
 .bold-button {
   background: $base-blue;
   border: none;

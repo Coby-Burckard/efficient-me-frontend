@@ -16,7 +16,11 @@ const ModalBody = props => {
       isOpen={props.isOpen}
       onRequestClose={closeModal}
     >
-      <button onClick={closeModal}>X</button>
+      <div className="modal__button">
+        <button className="link-button link-button--close" onClick={closeModal}>
+          X
+        </button>
+      </div>
       {props.children}
     </Modal>
   );

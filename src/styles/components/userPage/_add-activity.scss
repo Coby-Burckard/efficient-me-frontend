@@ -1,0 +1,27 @@
+.add-activity {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.add-activity__title {
+  font-size: $l-size;
+}
+
+.add-activity__top-row {
+  height: 33%;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.add-activity__img {
+  height: 75%;
+  margin-right: $s-size;
+}
+
+.add-activity__bottom-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

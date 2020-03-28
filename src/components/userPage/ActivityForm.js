@@ -51,8 +51,24 @@ const ActivityFrom = props => {
             value={description}
             onChange={onDescriptionChange}
           />
-          {!!props.id ? <button onClick={handleDelete}>Delete</button> : <></>}
-          <button type="submit">Save Activity</button>
+          <div className="modal__button-container">
+            <button
+              className="link-button link-button--submit-modal"
+              type="submit"
+            >
+              Save
+            </button>
+            {!!props.id ? (
+              <button
+                className="link-button link-button--submit-modal"
+                onClick={handleDelete}
+              >
+                Delete
+              </button>
+            ) : (
+              <></>
+            )}
+          </div>
         </form>
       </ModalBody>
     </>
