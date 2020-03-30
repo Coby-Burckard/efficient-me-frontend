@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { startLocalLogin } from "../actions/user";
+import { startLoadUserData } from "../actions/userData";
+import AppRouter from "../routers/AppRouter";
 
-const InitializeUser = () => {
+const InitializePage = () => {
+  const [dataLoaded, setDataLoaded] = useState(false);
   const dispatch = useDispatch();
-  dispatch(startLocalLogin());
-  return <></>;
+
+  useEffect(() => {
+    const token = dispatch(startLocalLogin());
+    console.log(token);
+    dispatch(startLoadUserData(token)).then(() => {
+      setDataLoaded(true);
+    });
+  }, [dispatch]);
+
+  return <>{dataLoaded ? <AppRouter /> : <></>}</>;
 };
 
-export { InitializeUser as default };
+export { InitializePage as default };

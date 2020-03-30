@@ -27,6 +27,7 @@ const startLocalLogin = () => {
   return dispatch => {
     const token = localAuth();
     dispatch(login(token));
+    return token;
   };
 };
 

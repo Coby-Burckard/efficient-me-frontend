@@ -41,7 +41,7 @@ const LongTermGoal = props => {
         </div>
       </div>
       <p className="ltg__description">{props.description}</p>
-      <p className="ltg__hours">hours</p>
+      <p className="ltg__hours">{`hours: ${props.complete_hours}/${props.total_hours}`}</p>
       <p className="ltg__complete">complete</p>
     </div>
   );
