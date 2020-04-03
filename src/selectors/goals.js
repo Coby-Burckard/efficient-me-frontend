@@ -14,8 +14,6 @@ const selectByKey = (fullObject, keysToMatch, hoursFlag) => {
 const buildHours = userData => {
   // takes in the nested userData and adds hours to each activity/goal
 
-  console.log(userData);
-
   userData.forEach(activity => {
     let activityTotalHours = 0;
     let activityCompleteHours = 0;
@@ -41,8 +39,6 @@ const buildHours = userData => {
     activity["total_hours"] = activityTotalHours;
     activity["complete_hours"] = activityCompleteHours;
   });
-
-  console.log(userData);
 
   return userData;
 };

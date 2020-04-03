@@ -25,11 +25,11 @@ const LongTermGoal = props => {
     <div className="card">
       <div className="ltg__top-row">
         <h2 className="ltg__title">{props.title}</h2>
-        <div className="ltg__top-row--buttons">
-          <button className="link-button" onClick={handleViewClick}>
+        <div className="ltg__top-row__buttons">
+          <button className="link-button--ltg" onClick={handleViewClick}>
             View
           </button>
-          <button className="link-button" onClick={handleEditClick}>
+          <button className="link-button--ltg" onClick={handleEditClick}>
             Edit
           </button>
           <ActivityForm

@@ -1,11 +1,11 @@
-import hostURL from './settings'
+import hostURL from "./settings";
 
 const fetchAddGoal = (token, goal) => {
   return fetch(`${hostURL}/api/goals/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Token ${token}`
+      Authorization: `Token ${token}`
     },
     body: JSON.stringify({
       title: `${goal.title}`,
@@ -13,24 +13,22 @@ const fetchAddGoal = (token, goal) => {
       activity: `${goal.activity}`,
       deadline: `${goal.deadline}`,
       hours_required: `${goal.hours_required}`
-  })})
-}
+    })
+  });
+};
 
 const fetchEditGoal = (token, goal, id) => {
   return fetch(`${hostURL}/api/goals/${id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Token ${token}`
+      Authorization: `Token ${token}`
     },
     body: JSON.stringify({
-      title: `${goal.title}`,
-      description: `${goal.description}`,
-      activity: `${goal.activityID}`,
-      deadline: `${goal.dateTime}`,
-      hours_required: `${goal.hours}`
-  })})
-}
+      ...goal
+    })
+  });
+};
 
 const fetchDeleteGoal = (token, id) => {
   return fetch(`${hostURL}/api/goals/${id}`, {
@@ -42,4 +40,4 @@ const fetchDeleteGoal = (token, id) => {
   });
 };
 
-export { fetchEditGoal, fetchAddGoal, fetchDeleteGoal }
+export { fetchEditGoal, fetchAddGoal, fetchDeleteGoal };

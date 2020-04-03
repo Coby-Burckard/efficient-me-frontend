@@ -10,7 +10,6 @@ const InitializePage = () => {
 
   useEffect(() => {
     const token = dispatch(startLocalLogin());
-    console.log(token);
     dispatch(startLoadUserData(token)).then(() => {
       setDataLoaded(true);
     });

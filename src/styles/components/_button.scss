@@ -60,6 +60,28 @@
   font-size: $s-size;
 }
 
+.link-button--nav {
+  @extend .link-button;
+  background: white;
+  border: 1px solid $base-blue;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  font-size: $m-size;
+  padding: $xs-size 0;
+  text-decoration: none;
+}
+
+.link-button--ltg {
+  @extend .link-button;
+  padding: 0 $s-size 0 0;
+  margin: 0;
+}
+
+.selected {
+  background-color: lighten($base-light, 45%);
+}
+
 .bold-button {
   background: $base-blue;
   border: none;

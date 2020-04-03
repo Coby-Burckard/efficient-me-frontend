@@ -1,0 +1,14 @@
+.goal-page {
+  display: flex;
+}
+
+.goal-page__stg-container {
+  border-right: 1px solid $base-blue;
+  display: flex;
+  flex-direction: column;
+  width: 18rem;
+}
+
+.goal-page__time-container {
+  padding-left: $s-size;
+}

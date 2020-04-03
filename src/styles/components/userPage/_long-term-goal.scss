@@ -3,7 +3,11 @@
   justify-content: space-between;
 }
 
-.ltg__top-row--buttons {
+.ltg__top-row__buttons {
+  align-items: flex-start;
+  display: flex;
+  justify-content: flex-end;
+  width: 8rem;
 }
 
 .ltg__title {
