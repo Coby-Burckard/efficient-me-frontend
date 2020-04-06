@@ -1,46 +1,46 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ModalBody from "../../ModalBody";
-import startDeleteTime from "../../../actions/time";
+import { startDeleteTime } from "../../../actions/time";
 
-const TimeForm = props => {
-  const token = useSelector(state => state.user.user);
+const TimeForm = (props) => {
+  const token = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
   const [title, setTitle] = useState(props.title || "");
   const [description, setDescription] = useState(props.description || "");
   const [timeSpent, setTimeSpent] = useState(props.time_speant || 0);
   const [date, setDate] = useState(props.date_completed || "");
 
-  const handleInputChange = e => {
+  const handleInputChange = (e) => {
     setTitle(e.target.value);
   };
 
-  const handleDescriptionChange = e => {
+  const handleDescriptionChange = (e) => {
     setDescription(e.target.value);
   };
 
-  const handleTimeSpentChange = e => {
+  const handleTimeSpentChange = (e) => {
     setTimeSpent(e.target.value);
   };
 
-  const handleDateChange = e => {
+  const handleDateChange = (e) => {
     setDate(e.target.value);
   };
 
-  const handleFormSubmit = e => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
     const time = {
       title,
       description,
       time_speant: timeSpent,
       date_completed: date,
-      goal: props.goalID
+      goal: props.goalID,
     };
     dispatch(props.onSubmit(token, time, props.id || null));
     props.setIsOpen(false);
   };
 
-  const handleDelete = e => {
+  const handleDelete = (e) => {
     e.preventDefault();
     dispatch(startDeleteTime(token, props.id));
     props.setIsOpen(false);

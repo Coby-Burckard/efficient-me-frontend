@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { startEditTime } from "../../../actions/time";
 import TimeForm from "./TimeForm";
 
-const EditTime = props => {
+const EditTime = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => {
@@ -18,6 +18,7 @@ const EditTime = props => {
         isOpen={isOpen}
         setIsOpen={setIsOpen}
         onSubmit={startEditTime}
+        goalID={props.goalID}
         {...props}
       />
     </>

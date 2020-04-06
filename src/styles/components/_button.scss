@@ -105,3 +105,9 @@
     width: 6rem;
   }
 }
+
+.bold-button--stg {
+  @extend .bold-button;
+  width: 18rem;
+  font-size: $m-size;
+}

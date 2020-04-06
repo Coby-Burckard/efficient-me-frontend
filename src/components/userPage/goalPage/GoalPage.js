@@ -11,7 +11,7 @@ const GoalPage = (props) => {
   const activeGoalID = queryString.parse(props.location.search).gid || false;
 
   return (
-    <div className="content-container--s">
+    <div className="content-container">
       <div className="goal-page">
         <ShortTermList activityID={activityID} />
         {activeGoalID && <TimeBlock activeGoalID={activeGoalID} />}

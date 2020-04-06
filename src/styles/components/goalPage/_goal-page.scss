@@ -6,7 +6,8 @@
   border-right: 1px solid $base-blue;
   display: flex;
   flex-direction: column;
-  width: 18rem;
+  width: 20rem;
+  min-height: 80vh;
 }
 
 .goal-page__time-container {

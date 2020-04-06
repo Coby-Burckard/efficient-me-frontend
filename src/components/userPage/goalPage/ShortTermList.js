@@ -14,7 +14,19 @@ const ShortTermList = (props) => {
 
   return (
     <div className="goal-page__stg-container">
-      <AddGoal activityID={props.activityID} />
+      <NavLink
+        to={`/goalpage/${props.activityID}`}
+        className="link-button--nav"
+        activeClassName="selected"
+        exact
+        isActive={(match, location) =>
+          location.pathname + location.search ===
+          `/goalpage/${props.activityID}`
+        }
+      >
+        Summary
+      </NavLink>
+      {/* <AddGoal activityID={props.activityID} /> */}
       {matchedGoals.map((goal) => (
         <NavLink
           to={`/goalpage/${props.activityID}?gid=${goal.id}`}

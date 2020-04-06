@@ -1,0 +1,30 @@
+.activity-overview__container {
+  display: flex;
+  flex-grow: 1;
+}
+
+.activity-overview__img-contianer {
+  max-width: 15rem;
+  display: flex;
+  margin-top: $s-size;
+}
+
+.activity-overview__text-container {
+  display: flex;
+  flex-direction: column;
+  margin: $s-size $xs-size 0 $l-size;
+  padding: 0;
+  max-width: 28rem;
+}
+
+.activity-overview__title {
+  font-size: $ml-size;
+  margin: 0;
+  padding: 0;
+}
+
+.activity_overview__description {
+  color: $text-grey;
+  font-size: $m-size;
+  padding: $xs-size 0;
+}

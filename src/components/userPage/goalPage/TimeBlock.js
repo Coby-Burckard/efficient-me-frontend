@@ -1,7 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { selectByKey } from "../../../selectors/goals";
+import AddTime from "./AddTime";
 import EditGoal from "./EditGoal";
+import EditTime from "./EditTime";
 
 const TimeBlock = (props) => {
   //the short term goal id is passed in as a prop
@@ -20,9 +22,11 @@ const TimeBlock = (props) => {
   return (
     <div className="goal-page__time-container">
       <EditGoal activityID={activityID} {...activeGoal} />
+      <AddTime goalID={activeGoalID} />
       {matchedTimes.map((time) => (
         <div>
-          <p>{time.title}</p>
+          <span>{time.title}</span>
+          <EditTime {...time} goalID={activeGoalID} />
         </div>
       ))}
     </div>
