@@ -42,7 +42,7 @@ const TimeForm = (props) => {
 
   const handleDelete = (e) => {
     e.preventDefault();
-    dispatch(startDeleteTime(token, props.id));
+    dispatch(startDeleteTime(token, props.id, props.goalID));
     props.setIsOpen(false);
   };
 

@@ -2,47 +2,50 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ModalBody from "../../ModalBody";
 import { startDeleteGoal } from "../../../actions/goal";
+import { useHistory } from "react-router-dom";
 
-const GoalForm = props => {
-  const token = useSelector(state => state.user.user);
+const GoalForm = (props) => {
+  const token = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
   const [title, setTitle] = useState(props.title || "");
   const [description, setDescription] = useState(props.description || "");
   const [hoursRequired, setHoursRequired] = useState(props.hours_required || 0);
   const [date, setDate] = useState(props.deadline || "");
+  const history = useHistory();
 
-  const handleTitleChange = e => {
+  const handleTitleChange = (e) => {
     setTitle(e.target.value);
   };
 
-  const handleDescriptionChange = e => {
+  const handleDescriptionChange = (e) => {
     setDescription(e.target.value);
   };
 
-  const handleHoursRequiredChange = e => {
+  const handleHoursRequiredChange = (e) => {
     setHoursRequired(e.target.value);
   };
 
-  const handleDateChange = e => {
+  const handleDateChange = (e) => {
     setDate(e.target.value);
   };
 
-  const handleFormSubmit = e => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
     const goal = {
       title,
       description,
       hours_required: hoursRequired,
       deadline: date,
-      activity: props.activityID
+      activity: props.activityID,
     };
     dispatch(props.onSubmit(token, goal, props.id || null));
     props.setIsOpen(false);
   };
 
-  const handleDelete = e => {
+  const handleDelete = (e) => {
     e.preventDefault();
-    dispatch(startDeleteGoal(token, props.id));
+    dispatch(startDeleteGoal(token, props.id, props.activityID));
+    history.push(`/goalpage/${props.activityID}`);
     props.setIsOpen(false);
   };
 

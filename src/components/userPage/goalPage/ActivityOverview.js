@@ -9,9 +9,10 @@ const ActivityOverview = (props) => {
     (state) => state.data.entities.activities[props.activityID]
   );
 
-  const percentage = Math.floor(
+  let percentage = Math.floor(
     (activity.complete_hours / activity.total_hours) * 100
   );
+  percentage = percentage || 0;
 
   return (
     <div className="activity-overview__container">
