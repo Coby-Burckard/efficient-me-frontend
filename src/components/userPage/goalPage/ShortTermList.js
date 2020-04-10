@@ -24,9 +24,8 @@ const ShortTermList = (props) => {
           `/goalpage/${props.activityID}`
         }
       >
-        Summary
+        Long term goal
       </NavLink>
-      {/* <AddGoal activityID={props.activityID} /> */}
       {matchedGoals.map((goal) => (
         <NavLink
           to={`/goalpage/${props.activityID}?gid=${goal.id}`}

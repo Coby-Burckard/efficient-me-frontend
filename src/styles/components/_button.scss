@@ -111,3 +111,14 @@
   width: 18rem;
   font-size: $m-size;
 }
+
+.bold-button--add-time {
+  @extend .bold-button;
+  width: 12rem;
+  font-size: $m-size;
+  background-color: #40b6c5;
+
+  &:hover {
+    background-color: lighten($color: $base-light, $amount: 25%);
+  }
+}

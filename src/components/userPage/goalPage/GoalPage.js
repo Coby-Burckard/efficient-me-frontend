@@ -1,7 +1,7 @@
 import React from "react";
 import queryString from "query-string";
 import ActivityOverview from "./ActivityOverview";
-import TimeBlock from "./TimeBlock";
+import GoalBlock from "./GoalBlock";
 import ShortTermList from "./ShortTermList";
 
 const GoalPage = (props) => {
@@ -14,8 +14,11 @@ const GoalPage = (props) => {
     <div className="content-container">
       <div className="goal-page">
         <ShortTermList activityID={activityID} />
-        {activeGoalID && <TimeBlock activeGoalID={activeGoalID} />}
-        {!!!activeGoalID && <ActivityOverview activityID={activityID} />}
+        {!!activeGoalID ? (
+          <GoalBlock activeGoalID={activeGoalID} />
+        ) : (
+          <ActivityOverview activityID={activityID} />
+        )}
       </div>
     </div>
   );

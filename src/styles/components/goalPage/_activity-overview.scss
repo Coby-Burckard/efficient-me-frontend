@@ -4,9 +4,10 @@
 }
 
 .activity-overview__img-contianer {
+  align-items: flex-start;
   max-width: 15rem;
   display: flex;
-  margin-top: $s-size;
+  margin: $s-size 0 0 $s-size;
 }
 
 .activity-overview__text-container {

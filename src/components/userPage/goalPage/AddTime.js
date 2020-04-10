@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { startAddTime } from "../../../actions/time";
 import TimeForm from "./TimeForm";
 
-const AddTime = props => {
+const AddTime = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => {
@@ -11,7 +11,7 @@ const AddTime = props => {
 
   return (
     <>
-      <button className="link-button--nav" onClick={openModal}>
+      <button className="bold-button--add-time" onClick={openModal}>
         Add time
       </button>
       <TimeForm
