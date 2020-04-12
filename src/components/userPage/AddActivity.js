@@ -11,31 +11,32 @@ const AddActivity = () => {
   };
 
   return (
-    <>
-      <div className="card add-activity">
-        <div className="add-activity__top-row">
+    <section className="add-activity__container">
+      <div className="add-activity">
+        {/* <div className="add-activity__img-container">
           <img
             className="add-activity__img"
             src={longTerm}
             alt="long term goal"
           />
-          <h2 className="ltg__title">Long term goals</h2>
-        </div>
-        <p className="ltg__subtitle">
-          What do you want to acomplish 6 - 12 months from now?
-        </p>
-        <div className="add-activity__bottom-row">
-          <button className="bold-button" onClick={openForm}>
-            Create
+        </div> */}
+        <div className="add-activity__text-container">
+          <h2 className="add-activity__title">Long Term Goals</h2>
+          <p className="add-activity__subtitle">
+            Lorem ipsum dolor sit amet, eum iudico fuisset in, lorem aperiam vis
+            eu. Eu has mutat scripserit, sonet possit ne qui.
+          </p>
+          <button className="bold-button--add-activity" onClick={openForm}>
+            Create Long Term Goal
           </button>
+          <ActivityForm
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+            onSubmit={startAddActivity}
+          />
         </div>
       </div>
-      <ActivityForm
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-        onSubmit={startAddActivity}
-      />
-    </>
+    </section>
   );
 };
 

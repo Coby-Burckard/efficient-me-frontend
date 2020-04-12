@@ -4,21 +4,29 @@ import LongTermGoal from "./LongTermGoal";
 import AddActivity from "./AddActivity";
 
 const UserPage = () => {
-  const longTermGoals = useSelector(store => store.data.entities.activities);
+  const longTermGoals = useSelector((store) => store.data.entities.activities);
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="content-container--s">
-      <div className="goal-page">
+    <div className="user-page">
+      <div className="content-container--s">
         <AddActivity />
-        {Object.keys(longTermGoals).map(ltgKey => {
-          const LTG = longTermGoals[ltgKey];
-          return (
-            <>
-              <LongTermGoal key={LTG.id} {...LTG} />
-            </>
-          );
-        })}
+        <section className="ltg">
+          {Object.keys(longTermGoals).map((ltgKey, index) => {
+            const LTG = longTermGoals[ltgKey];
+            const color = index % 2 === 0 ? "#007685" : "#40b6c5";
+            return (
+              <>
+                <LongTermGoal
+                  key={LTG.id}
+                  {...LTG}
+                  index={index}
+                  color={color}
+                />
+              </>
+            );
+          })}
+        </section>
       </div>
     </div>
   );

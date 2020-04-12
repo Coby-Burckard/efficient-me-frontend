@@ -122,3 +122,12 @@
     background-color: lighten($color: $base-light, $amount: 25%);
   }
 }
+
+.bold-button--add-activity {
+  @extend .bold-button;
+  font-size: $m-size;
+  padding: $xs-size $s-size;
+  height: 3.5rem;
+  width: 20rem;
+  border-radius: 1.75rem;
+}

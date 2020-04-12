@@ -1,14 +1,13 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { startEditActivity } from "../../actions/activity";
-import { selectByKey } from "../../selectors/goals";
-import ActivityForm from "./ActivityForm";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
-const LongTermGoal = props => {
-  const allGoals = useSelector(state => state.data.entities.goals);
-  const matchedGoals = selectByKey(allGoals, props.goal_set);
+const LongTermGoal = (props) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  let percentage = Math.floor((props.complete_hours / props.total_hours) * 100);
+  percentage = isNaN(percentage) ? 0 : percentage;
 
   const history = useHistory();
 
@@ -22,27 +21,26 @@ const LongTermGoal = props => {
 
   console.log(props);
   return (
-    <div className="card">
-      <div className="ltg__top-row">
-        <h2 className="ltg__title">{props.title}</h2>
-        <div className="ltg__top-row__buttons">
-          <button className="link-button--ltg" onClick={handleViewClick}>
-            View
-          </button>
-          <button className="link-button--ltg" onClick={handleEditClick}>
-            Edit
-          </button>
-          <ActivityForm
-            onSubmit={startEditActivity}
-            isOpen={isOpen}
-            setIsOpen={setIsOpen}
-            {...props}
-          />
-        </div>
+    <div className="card" onClick={handleViewClick}>
+      <div className="ltg__top-row" style={{ backgroundColor: props.color }}>
+        <CircularProgressbar
+          background={true}
+          backgroundPadding={5}
+          className="ltg__progress"
+          value={percentage}
+          text={`${percentage}%`}
+          styles={buildStyles({
+            backgroundColor: props.color,
+            pathColor: "white",
+            textColor: "white",
+            trailColor: props.color,
+          })}
+        />
       </div>
-      <p className="ltg__description">{props.description}</p>
-      <p className="ltg__hours">{`hours: ${props.complete_hours}/${props.total_hours}`}</p>
-      <p className="ltg__complete">complete</p>
+      <div className="ltg__bottom-row">
+        <h2 className="ltg__title">{props.title}</h2>
+        <p className="ltg__description">{props.description}</p>
+      </div>
     </div>
   );
 };

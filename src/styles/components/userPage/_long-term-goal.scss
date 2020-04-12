@@ -1,16 +1,37 @@
-.ltg__top-row {
+.ltg {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  padding-top: $m-size;
 }
 
-.ltg__top-row__buttons {
-  align-items: flex-start;
+.ltg__top-row {
+  background-color: $base-blue;
+  border-radius: 2rem 2rem 0 0;
+  height: 60%;
+}
+
+.ltg__bottom-row {
   display: flex;
-  justify-content: flex-end;
-  width: 8rem;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.ltg__progress {
+  height: 100%;
 }
 
 .ltg__title {
+  color: $base-dark;
+  font-size: $m-size;
   padding: 0;
   margin: 0;
+}
+
+.ltg__description {
+  color: $base-dark;
+  font-size: $s-size;
+  margin: $s-size 0 0 0;
 }
