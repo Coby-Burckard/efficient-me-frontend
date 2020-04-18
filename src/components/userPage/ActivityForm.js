@@ -3,26 +3,26 @@ import { useDispatch, useSelector } from "react-redux";
 import ModalBody from "../ModalBody";
 import { startDeleteActivity } from "../../actions/activity";
 
-const ActivityFrom = props => {
+const ActivityFrom = (props) => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState(props.title || "");
   const [description, setDescription] = useState(props.description || "");
-  const token = useSelector(state => state.user.user);
+  const token = useSelector((state) => state.user.user);
 
-  const onTitleChange = e => {
+  const onTitleChange = (e) => {
     setTitle(e.target.value);
   };
 
-  const onDescriptionChange = e => {
+  const onDescriptionChange = (e) => {
     setDescription(e.target.value);
   };
 
-  const handleFormSubmit = e => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
     const activity = {
       title,
       description,
-      activity_type: [1]
+      activity_type: [1],
     };
     dispatch(props.onSubmit(token, activity, props.id || null));
     setTitle("");
@@ -30,7 +30,7 @@ const ActivityFrom = props => {
     props.setIsOpen(false);
   };
 
-  const handleDelete = e => {
+  const handleDelete = (e) => {
     e.preventDefault();
     dispatch(startDeleteActivity(token, props.id));
     props.setIsOpen(false);

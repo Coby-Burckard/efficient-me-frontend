@@ -1,24 +1,31 @@
-import React from "react";
-import Time from "../Time";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { selectByKey } from "../../../selectors/goals";
-import TimeForm from "./TimeForm";
-import { startAddTime } from "../../../actions/time";
+import ShortTermBody from "./ShortTermBody";
 
-const ShortTermGoal = props => {
-  const allTimes = useSelector(state => state.data.entities.times);
+const ShortTermGoal = (props) => {
+  const allTimes = useSelector((state) => state.data.entities.times);
 
   const matchedTimes = selectByKey(allTimes, props.timeallocation_set);
 
+  const [isActive, setIsActive] = useState(false);
+
+  const openTimeList = () => {
+    setIsActive(!isActive);
+  };
+
   return (
-    <div>
-      <p>- {props.description}</p>
-      <TimeForm onSubmit={startAddTime} goalID={props.id} />
-      <ol>
-        {matchedTimes.map(time => (
-          <Time key={time.id} {...time} />
-        ))}
-      </ol>
+    <div className="stg-goal-time-list-container" onClick={openTimeList}>
+      <ShortTermBody {...props} />
+      {isActive ? (
+        <ol>
+          {matchedTimes.map((time) => (
+            <li>{time.title}</li>
+          ))}
+        </ol>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

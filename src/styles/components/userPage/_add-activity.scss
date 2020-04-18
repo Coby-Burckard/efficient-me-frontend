@@ -24,6 +24,10 @@
 .add-activity__title {
   font-size: $l-size;
   margin: 0;
+
+  @media (max-width: $desktop-breakpoint) {
+    font-size: $m-size;
+  }
 }
 
 .add-activity__subtitle {
@@ -32,4 +36,9 @@
   line-height: 1.5;
   margin: $ml-size 0;
   width: 80%;
+
+  @media (max-width: $desktop-breakpoint) {
+    font-size: $s-size;
+    margin: $m-size;
+  }
 }

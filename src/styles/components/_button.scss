@@ -63,12 +63,12 @@
 .link-button--nav {
   @extend .link-button;
   background: white;
-  border: 1px solid $base-blue;
-  border-left: none;
-  border-top: none;
-  border-right: none;
+  border: 3px solid $base-light;
+  border-radius: 2rem;
   font-size: $m-size;
-  padding: $xs-size 0;
+  margin: 0 $xs-size $xs-size $xs-size;
+  max-width: 20rem;
+  padding: $xs-size $s-size;
   text-decoration: none;
 }
 
@@ -79,7 +79,12 @@
 }
 
 .selected {
-  background-color: lighten($base-light, 45%);
+  background-color: $base-light;
+  color: white;
+
+  &:hover {
+    color: white;
+  }
 }
 
 .bold-button {
@@ -88,6 +93,7 @@
   border-radius: 1.5rem;
   outline: none;
   color: white;
+  cursor: pointer;
   font-size: $s-size;
   height: 3rem;
   padding: 0 $xs-size;
@@ -108,8 +114,19 @@
 
 .bold-button--stg {
   @extend .bold-button;
-  width: 18rem;
-  font-size: $m-size;
+  font-size: 1.2rem;
+  height: 2.25rem;
+  margin-bottom: $s-size;
+  width: 14rem;
+}
+
+.bold-button--stg-list {
+  @extend .bold-button--stg;
+  background-color: $base-light;
+
+  &:hover {
+    background-color: $base-blue;
+  }
 }
 
 .bold-button--add-time {
@@ -130,4 +147,11 @@
   height: 3.5rem;
   width: 20rem;
   border-radius: 1.75rem;
+
+  @media (max-width: $desktop-breakpoint) {
+    font-size: $s-size;
+    height: 2.4rem;
+    width: 15rem;
+    border-radius: 1.2rem;
+  }
 }

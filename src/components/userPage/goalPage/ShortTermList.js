@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import AddGoal from "./AddGoal";
 import { selectByKey } from "../../../selectors/goals";
+import GoalOverview from "./GoalOverview";
+import ShortTermGoal from "./ShortTermGoal";
 
 const ShortTermList = (props) => {
   // selecting the goals that correspond to this activity
@@ -13,32 +15,9 @@ const ShortTermList = (props) => {
   const matchedGoals = selectByKey(allGoals, activity.goal_set);
 
   return (
-    <div className="goal-page__stg-container">
-      <NavLink
-        to={`/goalpage/${props.activityID}`}
-        className="link-button--nav"
-        activeClassName="selected"
-        exact
-        isActive={(match, location) =>
-          location.pathname + location.search ===
-          `/goalpage/${props.activityID}`
-        }
-      >
-        Long term goal
-      </NavLink>
+    <div className="stg-list">
       {matchedGoals.map((goal) => (
-        <NavLink
-          to={`/goalpage/${props.activityID}?gid=${goal.id}`}
-          className="link-button--nav"
-          activeClassName="selected"
-          exact
-          isActive={(match, location) =>
-            location.pathname + location.search ===
-            `/goalpage/${props.activityID}?gid=${goal.id}`
-          }
-        >
-          {goal.title}
-        </NavLink>
+        <ShortTermGoal {...goal} />
       ))}
     </div>
   );

@@ -1,9 +1,15 @@
 .ltg {
+  cursor: pointer;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   width: 100%;
   padding-top: $m-size;
+
+  @media (max-width: 1150px) {
+    justify-content: center;
+    padding-top: 0;
+  }
 }
 
 .ltg__top-row {

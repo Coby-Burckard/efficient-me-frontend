@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
 const LongTermGoal = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
-
   let percentage = Math.floor((props.complete_hours / props.total_hours) * 100);
   percentage = isNaN(percentage) ? 0 : percentage;
 
@@ -15,11 +13,6 @@ const LongTermGoal = (props) => {
     history.push(`/goalpage/${props.id}`);
   };
 
-  const handleEditClick = () => {
-    setIsOpen(true);
-  };
-
-  console.log(props);
   return (
     <div className="card" onClick={handleViewClick}>
       <div className="ltg__top-row" style={{ backgroundColor: props.color }}>

@@ -11,7 +11,7 @@ const AddGoal = (props) => {
 
   return (
     <>
-      <button className="bold-button--stg" onClick={openModal}>
+      <button className="bold-button--stg-list" onClick={openModal}>
         New short term goal
       </button>
       <GoalForm

@@ -1,31 +1,45 @@
 .activity-overview__container {
   display: flex;
-  flex-grow: 1;
+  flex-direction: column;
+  flex-grow: 0;
+  margin-top: $s-size;
+  width: 20rem;
 }
 
 .activity-overview__img-contianer {
-  align-items: flex-start;
-  max-width: 15rem;
+  height: auto;
+  width: 15rem;
+  margin: 0 0 0 $s-size;
+  padding-top: $s-size;
+}
+
+.activity-overview__info-container {
   display: flex;
-  margin: $s-size 0 0 $s-size;
+  margin: 0;
+  padding: 0;
 }
 
 .activity-overview__text-container {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  margin: $s-size $xs-size 0 $l-size;
-  padding: 0;
-  max-width: 28rem;
+  height: 15rem;
+  margin-right: $xs-size;
+  width: 40rem;
 }
 
 .activity-overview__title {
   font-size: $ml-size;
   margin: 0;
-  padding: 0;
+
+  @media (max-width: $desktop-breakpoint) {
+    font-size: $m-size;
+  }
 }
 
 .activity_overview__description {
   color: $text-grey;
-  font-size: $m-size;
-  padding: $xs-size 0;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin: $m-size 0;
 }

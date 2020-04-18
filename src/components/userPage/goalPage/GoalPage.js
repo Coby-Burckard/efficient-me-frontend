@@ -11,15 +11,10 @@ const GoalPage = (props) => {
   const activeGoalID = queryString.parse(props.location.search).gid || false;
 
   return (
-    <div className="content-container">
-      <div className="goal-page">
-        <ShortTermList activityID={activityID} />
-        {!!activeGoalID ? (
-          <GoalBlock activeGoalID={activeGoalID} />
-        ) : (
-          <ActivityOverview activityID={activityID} />
-        )}
-      </div>
+    <div className="content-container--goal-page">
+      <ActivityOverview activityID={activityID} />
+      <ShortTermList activityID={activityID} />
+      {!!activeGoalID ? <GoalBlock activeGoalID={activeGoalID} /> : <></>}
     </div>
   );
 };
