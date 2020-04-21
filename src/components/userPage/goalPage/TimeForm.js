@@ -1,18 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ModalBody from "../../ModalBody";
 import { startDeleteTime } from "../../../actions/time";
 
 const TimeForm = (props) => {
-  const token = useSelector((state) => state.user.user);
-  const error = useSelector((state) => state.data.errors.timeError);
   const dispatch = useDispatch();
-  const [title, setTitle] = useState(props.title || "");
-  const [description, setDescription] = useState(props.description || "");
-  const [timeSpent, setTimeSpent] = useState(props.time_speant || 0);
-  const [date, setDate] = useState(props.date_completed || "");
+
+  //initializing submission parameters based on if form is for editing or adding
+  let goalID = useSelector((state) => state.modal.addTime);
+  const timeID = useSelector((state) => state.modal.editTime);
+  const time = useSelector((state) => state.data.entities.times[+timeID]) || {
+    a: "a",
+  };
+
+  if (!!time.id) {
+    goalID = time.goal;
+  }
+
+  //obtaining user data
+  const token = useSelector((state) => state.user.user);
+
+  //obtaining form error value
+  const error = useSelector((state) => state.data.errors.timeError);
+
+  //initializing form values
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [timeSpent, setTimeSpent] = useState(0);
+  const [date, setDate] = useState("");
+
+  //when time changes - modifying the default form values
+  useEffect(() => {
+    setTitle(time.title || "");
+    setDescription(time.description || "");
+    setTimeSpent(time.time_speant || 0);
+    setDate(time.date_completed || "");
+  }, [time.date_completed, time.description, time.time_speant, time.title]);
 
   const handleInputChange = (e) => {
+    console.log(e.target.value);
     setTitle(e.target.value);
   };
 
@@ -30,24 +56,24 @@ const TimeForm = (props) => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const time = {
+    const timeSub = {
       title,
       description,
       time_speant: timeSpent,
       date_completed: date,
-      goal: props.goalID,
+      goal: goalID,
     };
-    dispatch(props.onSubmit(token, time, props.id || null));
+    dispatch(props.onSubmit(token, timeSub, time.id || null));
   };
 
   const handleDelete = (e) => {
     e.preventDefault();
-    dispatch(startDeleteTime(token, props.id, props.goalID));
+    dispatch(startDeleteTime(token, time.id, goalID));
     props.setIsOpen(false);
   };
 
   return (
-    <ModalBody isOpen={props.isOpen} setIsOpen={props.setIsOpen}>
+    <ModalBody isOpen={!!props.isOpen} setIsOpen={props.setIsOpen}>
       <form className="modal__form" onSubmit={handleFormSubmit}>
         <input
           placeholder="title"
@@ -76,7 +102,7 @@ const TimeForm = (props) => {
           >
             Save
           </button>
-          {!!props.id ? (
+          {!!time.id ? (
             <button
               className="link-button link-button--submit-modal"
               onClick={handleDelete}

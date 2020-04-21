@@ -3,18 +3,23 @@ import {
   fetchEditTime,
   fetchDeleteTime,
 } from "../ajaxOrLocal/time";
-import { TFPromise } from "./general";
 
 const startAddTime = (token, time) => {
   return (dispatch) => {
     fetchAddTime(token, time)
       .then((response) => {
         if (response.status !== 201) {
-          throw new Error("Error adding time to the db: ", response.status);
+          return new Promise((resolve, reject) => {
+            reject();
+          });
         }
         return response.json();
       })
-      .then((responseJSON) => dispatch(addTime(responseJSON)));
+      .then((responseJSON) => {
+        dispatch(addTime(responseJSON));
+        dispatch(setAddTimeModal(false));
+        dispatch(timeFormError(false));
+      });
   };
 };
 
@@ -28,24 +33,32 @@ const startEditTime = (token, time, id) => {
     fetchEditTime(token, time, id)
       .then((response) => {
         if (response.status !== 200) {
-          return TFPromise(false);
+          return new Promise((resolve, reject) => {
+            reject();
+          });
         }
         return response.json();
       })
       .then((responseJSON) => {
-        if (!!responseJSON) {
-          dispatch(editTime(responseJSON));
-          dispatch(timeFormError(false));
-          return TFPromise(true);
-        } else {
-          dispatch(
-            timeFormError("Unable to process request - please check all forms")
-          );
-          return TFPromise(false);
-        }
+        dispatch(editTime(responseJSON));
+        dispatch(setEditTimeModal(false));
+        dispatch(timeFormError(false));
+      })
+      .catch(() => {
+        dispatch(timeFormError("ERROR - please check inputs"));
       });
   };
 };
+
+const setAddTimeModal = (isOpen) => ({
+  type: "SET_ADD_TIME",
+  isOpen,
+});
+
+const setEditTimeModal = (isOpen) => ({
+  type: "SET_EDIT_TIME",
+  isOpen,
+});
 
 const editTime = (time) => ({
   type: "EDIT_TIME",
@@ -70,9 +83,16 @@ const deleteTime = (timeID, goalID) => ({
   goalID,
 });
 
-const timeFormError = () => ({
+const timeFormError = (error) => ({
   type: "TIME_ERROR",
-  error: "Unable to process request - please check all inputs",
+  error,
 });
 
-export { startAddTime, startEditTime, startDeleteTime, timeFormError };
+export {
+  startAddTime,
+  startEditTime,
+  startDeleteTime,
+  timeFormError,
+  setEditTimeModal,
+  setAddTimeModal,
+};

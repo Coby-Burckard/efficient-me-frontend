@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import { startEditTime } from "../../../actions/time";
-import TimeForm from "./TimeForm";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { setEditTimeModal } from "../../../actions/time";
 
 const EditTime = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
 
   const openModal = () => {
     console.log("opening modal");
-    setIsOpen(true);
+    dispatch(setEditTimeModal(props.id));
   };
 
   return (
@@ -15,13 +15,6 @@ const EditTime = (props) => {
       <button className="link-button--time" onClick={openModal}>
         Edit
       </button>
-      <TimeForm
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-        onSubmit={startEditTime}
-        goalID={props.goalID}
-        {...props}
-      />
     </>
   );
 };

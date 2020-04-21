@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { startAddTime } from "../../../actions/time";
-import TimeForm from "./TimeForm";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { setAddTimeModal } from "../../../actions/time";
 
 const AddTime = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
 
   const openModal = () => {
-    setIsOpen(true);
+    dispatch(setAddTimeModal(props.goalID));
   };
 
   return (
@@ -14,12 +14,6 @@ const AddTime = (props) => {
       <button className="bold-button--add-time" onClick={openModal}>
         Log time
       </button>
-      <TimeForm
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-        goalID={props.goalID}
-        onSubmit={startAddTime}
-      />
     </>
   );
 };
