@@ -6,13 +6,14 @@ const EditTime = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => {
+    console.log("opening modal");
     setIsOpen(true);
   };
 
   return (
     <>
-      <button className="link-button--nav" onClick={openModal}>
-        Edit Time
+      <button className="link-button--time" onClick={openModal}>
+        Edit
       </button>
       <TimeForm
         isOpen={isOpen}

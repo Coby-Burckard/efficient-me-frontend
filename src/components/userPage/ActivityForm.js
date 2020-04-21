@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ModalBody from "../ModalBody";
 import { startDeleteActivity } from "../../actions/activity";
+import { useHistory } from "react-router-dom";
 
 const ActivityFrom = (props) => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const [title, setTitle] = useState(props.title || "");
   const [description, setDescription] = useState(props.description || "");
   const token = useSelector((state) => state.user.user);
@@ -34,6 +36,7 @@ const ActivityFrom = (props) => {
     e.preventDefault();
     dispatch(startDeleteActivity(token, props.id));
     props.setIsOpen(false);
+    history.push("/userpage");
   };
 
   return (

@@ -12,7 +12,7 @@ const AddTime = (props) => {
   return (
     <>
       <button className="bold-button--add-time" onClick={openModal}>
-        Add time
+        Log time
       </button>
       <TimeForm
         isOpen={isOpen}

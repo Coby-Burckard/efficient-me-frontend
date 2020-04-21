@@ -14,6 +14,9 @@ const activitySubReducer = {
   DELETE_ACTIVITY: (state, { id }) => {
     delete state.entities.activities[id];
   },
+  ACTIVITY_ERROR: (state, { error }) => {
+    state.errors.activityError = error;
+  },
 };
 
 export default activitySubReducer;

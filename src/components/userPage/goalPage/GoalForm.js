@@ -45,7 +45,6 @@ const GoalForm = (props) => {
   const handleDelete = (e) => {
     e.preventDefault();
     dispatch(startDeleteGoal(token, props.id, props.activityID));
-    history.push(`/goalpage/${props.activityID}`);
     props.setIsOpen(false);
   };
 

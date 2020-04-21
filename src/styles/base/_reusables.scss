@@ -59,16 +59,13 @@
 
 .card--stg {
   box-sizing: border-box;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5.5rem;
   transition: 0.3s;
   display: flex;
+  flex-direction: column;
   flex-grow: 1;
-  justify-content: space-between;
-  max-width: 65%;
 
   &:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     opacity: 65%;
   }
 }

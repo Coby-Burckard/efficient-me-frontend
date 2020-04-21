@@ -22,6 +22,9 @@ const timeSubReducer = {
     state.entities.goals[goalID].timeallocation_set = newList;
     updateHours(state, "goal", goalID);
   },
+  TIME_ERROR: (state, { error }) => {
+    state.errors.timeError = error;
+  },
 };
 
 export default timeSubReducer;

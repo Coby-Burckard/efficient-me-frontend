@@ -3,6 +3,7 @@ import {
   fetchEditTime,
   fetchDeleteTime,
 } from "../ajaxOrLocal/time";
+import { TFPromise } from "./general";
 
 const startAddTime = (token, time) => {
   return (dispatch) => {
@@ -27,11 +28,22 @@ const startEditTime = (token, time, id) => {
     fetchEditTime(token, time, id)
       .then((response) => {
         if (response.status !== 200) {
-          throw new Error("Error editing time: ", response.status);
+          return TFPromise(false);
         }
         return response.json();
       })
-      .then((responseJSON) => dispatch(editTime(responseJSON)));
+      .then((responseJSON) => {
+        if (!!responseJSON) {
+          dispatch(editTime(responseJSON));
+          dispatch(timeFormError(false));
+          return TFPromise(true);
+        } else {
+          dispatch(
+            timeFormError("Unable to process request - please check all forms")
+          );
+          return TFPromise(false);
+        }
+      });
   };
 };
 
@@ -58,4 +70,9 @@ const deleteTime = (timeID, goalID) => ({
   goalID,
 });
 
-export { startAddTime, startEditTime, startDeleteTime };
+const timeFormError = () => ({
+  type: "TIME_ERROR",
+  error: "Unable to process request - please check all inputs",
+});
+
+export { startAddTime, startEditTime, startDeleteTime, timeFormError };

@@ -1,12 +1,27 @@
+.stg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+}
+
+.stg__list-title {
+  font-size: $l-size;
+  margin: $s-size 0 $l-size 0;
+}
+
 .stg-list {
   display: flex;
   flex-grow: 1;
   flex-direction: column;
+  margin-bottom: 30rem;
+  margin-left: $xl-size;
 }
 
 .stg-goal-time-list-container {
+  align-items: flex;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   margin: $xs-size 0;
 }
 
@@ -21,32 +36,54 @@
   padding: 0 0 0 $s-size;
 }
 
-.stg__details-container {
+.stg__title-date-container {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  margin-bottom: $xs-size;
 }
 
-.stg__text-container {
-  margin-left: $xl-size;
+.stg__date-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: translate(-50%);
+}
+
+.stg__day-month {
+  margin-bottom: 0.2rem;
+  font-weight: bold;
+}
+
+.stg__info-container {
+  display: flex;
+  border-left: 1px solid $text-grey;
+}
+
+.stg__details-container {
+  align-items: flex-start;
+  display: flex;
+  justify-content: flex-start;
+  margin-right: $s-size;
+  padding: $xs-size 0 0 $xl-size;
+  width: 25rem;
 }
 
 .stg__title {
-  font-size: $m-size;
-  margin: $s-size 0;
+  font-size: $ml-size;
+  margin: 0;
 }
 
 .stg__description {
   font-size: $s-size;
   color: $text-grey;
-  margin: 0 0 0 0;
+  margin: 0 0 0.5rem 0;
+  flex-wrap: wrap;
 }
 
 .stg__hours-container {
+  padding: $xs-size 0 0 0;
   display: flex;
-  height: 6rem;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .stg__completed {
@@ -67,13 +104,12 @@
   border-radius: 0 5.3rem 5.3rem 0;
   display: flex;
   justify-content: flex-end;
-  padding: $xs-size $xs-size $xs-size 0;
-  width: 11rem;
+  margin-left: 1rem;
 }
 
 .stg__img-container {
   padding: 0;
-  width: 10rem;
+  width: 8rem;
 }
 
 .stg-list__add-goal {

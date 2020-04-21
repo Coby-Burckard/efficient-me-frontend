@@ -22,6 +22,9 @@ const goalSubReducer = {
     state.entities.activities[activityID].goal_set = newList;
     updateHours(state, "activity", activityID);
   },
+  GOAL_ERROR: (state, { error }) => {
+    state.errors.goalError = error;
+  },
 };
 
 export default goalSubReducer;

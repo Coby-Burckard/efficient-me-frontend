@@ -5,6 +5,7 @@ import { startDeleteTime } from "../../../actions/time";
 
 const TimeForm = (props) => {
   const token = useSelector((state) => state.user.user);
+  const error = useSelector((state) => state.data.errors.timeError);
   const dispatch = useDispatch();
   const [title, setTitle] = useState(props.title || "");
   const [description, setDescription] = useState(props.description || "");
@@ -37,7 +38,6 @@ const TimeForm = (props) => {
       goal: props.goalID,
     };
     dispatch(props.onSubmit(token, time, props.id || null));
-    props.setIsOpen(false);
   };
 
   const handleDelete = (e) => {
@@ -68,6 +68,7 @@ const TimeForm = (props) => {
           onChange={handleTimeSpentChange}
         />
         <input type="date" value={date} onChange={handleDateChange} />
+        {!!error && <p>{error}</p>}
         <div className="modal__button-container">
           <button
             className="link-button link-button--submit-modal"
