@@ -6,6 +6,10 @@
 .time-list {
   padding: $xs-size 0 0 $m-size;
   border-left: 1px solid $text-grey;
+
+  @media (max-width: $desktop-breakpoint) {
+    padding-left: $xs-size;
+  }
 }
 
 .time-list__overview {
@@ -15,6 +19,9 @@
 .time {
   display: flex;
   flex-direction: column;
+
+  @media (max-width: $desktop-breakpoint) {
+  }
 }
 
 .time__title-date-container {
@@ -28,12 +35,28 @@
   display: flex;
   flex-direction: column;
   padding: 0.8rem 0;
-  transform: translate(-3.75rem, 0);
+  transform: translate(-4.1rem, 0);
+  width: 5rem;
+
+  @media (max-width: $desktop-breakpoint) {
+    transform: translate(-2rem, 0);
+    width: 2.8rem;
+  }
 }
 
 .time__day-month {
   font-weight: bold;
   margin-bottom: 0.2rem;
+
+  @media (max-width: $desktop-breakpoint) {
+    font-size: $xs-size;
+  }
+}
+
+.time__year {
+  @media (max-width: $desktop-breakpoint) {
+    font-size: $xs-size;
+  }
 }
 
 .time__title-edit-container {
@@ -46,18 +69,29 @@
   flex-grow: 1;
   font-size: $m-size;
   margin: $s-size 0;
+
+  @media (max-width: $desktop-breakpoint) {
+    font-size: 0.9rem;
+  }
 }
 
 .time__info-container {
   display: flex;
-  margin-left: 4.25rem;
+  margin-left: 5rem;
+
+  @media (max-width: $desktop-breakpoint) {
+    margin-left: 1.2rem;
+  }
 }
 
 .time__description {
   color: $text-grey;
   margin-bottom: $ml-size;
-  width: 20rem;
+  width: 15rem;
 }
 
 .time__hours {
+  @media (max-width: $desktop-breakpoint) {
+    font-size: $xs-size;
+  }
 }

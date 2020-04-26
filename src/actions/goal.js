@@ -9,11 +9,20 @@ const startAddGoal = (token, goal) => {
     fetchAddGoal(token, goal)
       .then((response) => {
         if (response.status !== 201) {
-          throw new Error("Error adding goal to the db: ", response.status);
+          throw new Promise((resolve, reject) => {
+            reject();
+          });
         }
         return response.json();
       })
-      .then((responseJSON) => dispatch(addGoal(responseJSON)));
+      .then((responseJSON) => {
+        dispatch(addGoal(responseJSON));
+        dispatch(setAddGoalModal(false));
+        dispatch(goalFormError(false));
+      })
+      .catch(() => {
+        dispatch(goalFormError("Error: please check inputs"));
+      });
   };
 };
 
@@ -30,11 +39,20 @@ const startEditGoal = (token, goal, id) => {
     fetchEditGoal(token, goal, id)
       .then((response) => {
         if (response.status !== 200) {
-          throw new Error("Error editing goal: ", response.status);
+          return new Promise((resolve, reject) => {
+            reject();
+          });
         }
         return response.json();
       })
-      .then((responseJSON) => dispatch(editGoal(responseJSON)));
+      .then((responseJSON) => {
+        dispatch(editGoal(responseJSON));
+        dispatch(setEditGoalModal(false));
+        dispatch(goalFormError(false));
+      })
+      .catch(() => {
+        dispatch(goalFormError("Error: please check inputs"));
+      });
   };
 };
 
@@ -67,4 +85,21 @@ const goalFormError = () => ({
   error: "Unable to process request - please check inputs",
 });
 
-export { startAddGoal, startDeleteGoal, startEditGoal, goalFormError };
+const setAddGoalModal = (isOpen) => ({
+  type: "SET_ADD_GOAL",
+  isOpen,
+});
+
+const setEditGoalModal = (isOpen) => ({
+  type: "SET_EDIT_GOAL",
+  isOpen,
+});
+
+export {
+  startAddGoal,
+  startDeleteGoal,
+  startEditGoal,
+  goalFormError,
+  setAddGoalModal,
+  setEditGoalModal,
+};

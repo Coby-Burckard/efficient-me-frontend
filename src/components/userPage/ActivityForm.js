@@ -1,15 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ModalBody from "../ModalBody";
 import { startDeleteActivity } from "../../actions/activity";
 import { useHistory } from "react-router-dom";
 
 const ActivityFrom = (props) => {
+  //obtaining activity
+  const activityID = useSelector((state) => state.modal.editActivity);
+  const activity = useSelector(
+    (state) => state.data.entities.activities[+activityID]
+  ) || { a: "a" };
+
+  //initilizing key values
+  const token = useSelector((state) => state.user.user);
+  const error = useSelector((state) => state.data.errors.activityError);
   const dispatch = useDispatch();
   const history = useHistory();
-  const [title, setTitle] = useState(props.title || "");
-  const [description, setDescription] = useState(props.description || "");
-  const token = useSelector((state) => state.user.user);
+
+  //initializing local state
+  const [title, setTitle] = useState(activity.title || "");
+  const [description, setDescription] = useState(activity.description || "");
+
+  useEffect(() => {
+    console.log("calling use effect for activity", activity, activityID);
+    setTitle(activity.title || "");
+    setDescription(activity.description || "");
+  }, [activity, activity.description, activity.title, activityID]);
 
   const onTitleChange = (e) => {
     setTitle(e.target.value);
@@ -26,15 +42,12 @@ const ActivityFrom = (props) => {
       description,
       activity_type: [1],
     };
-    dispatch(props.onSubmit(token, activity, props.id || null));
-    setTitle("");
-    setDescription("");
-    props.setIsOpen(false);
+    dispatch(props.onSubmit(token, activity, activityID || null));
   };
 
   const handleDelete = (e) => {
     e.preventDefault();
-    dispatch(startDeleteActivity(token, props.id));
+    dispatch(startDeleteActivity(token, activity.id));
     props.setIsOpen(false);
     history.push("/userpage");
   };
@@ -54,6 +67,7 @@ const ActivityFrom = (props) => {
             value={description}
             onChange={onDescriptionChange}
           />
+          {!!error ? <p className="modal__error">{error}</p> : <></>}
           <div className="modal__button-container">
             <button
               className="link-button link-button--submit-modal"
@@ -61,7 +75,7 @@ const ActivityFrom = (props) => {
             >
               Save
             </button>
-            {!!props.id ? (
+            {!!activity.id ? (
               <button
                 className="link-button link-button--submit-modal"
                 onClick={handleDelete}

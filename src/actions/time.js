@@ -19,6 +19,9 @@ const startAddTime = (token, time) => {
         dispatch(addTime(responseJSON));
         dispatch(setAddTimeModal(false));
         dispatch(timeFormError(false));
+      })
+      .catch(() => {
+        dispatch(timeFormError("Error: Please check inputs"));
       });
   };
 };
@@ -45,7 +48,7 @@ const startEditTime = (token, time, id) => {
         dispatch(timeFormError(false));
       })
       .catch(() => {
-        dispatch(timeFormError("ERROR - please check inputs"));
+        dispatch(timeFormError("Error: please check inputs"));
       });
   };
 };

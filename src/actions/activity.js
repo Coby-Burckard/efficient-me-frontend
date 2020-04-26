@@ -9,11 +9,20 @@ const startAddActivity = (token, activity) => {
     fetchAddActivity(token, activity)
       .then((response) => {
         if (response.status !== 201) {
-          throw new Error("Error adding activity to the db: ", response.status);
+          return new Promise((resolve, reject) => {
+            reject();
+          });
         }
         return response.json();
       })
-      .then((responseJSON) => dispatch(addActivity(responseJSON)));
+      .then((responseJSON) => {
+        dispatch(addActivity(responseJSON));
+        dispatch(setAddActivityModal(false));
+        dispatch(activityFormError(false));
+      })
+      .catch(() => {
+        dispatch(activityFormError("Error: Please check inputs"));
+      });
   };
 };
 
@@ -27,11 +36,20 @@ const startEditActivity = (token, activity, id) => {
     fetchEditActivity(token, activity, id)
       .then((response) => {
         if (response.status !== 200) {
-          throw new Error("Error editing activity: ", response.status);
+          return new Promise((resolve, reject) => {
+            reject();
+          });
         }
         return response.json();
       })
-      .then((responseJSON) => dispatch(editActivity(responseJSON)));
+      .then((responseJSON) => {
+        dispatch(editActivity(responseJSON));
+        dispatch(setEditActivityModal(false));
+        dispatch(activityFormError(false));
+      })
+      .catch(() => {
+        dispatch(activityFormError("Error: please check inputs"));
+      });
   };
 };
 
@@ -59,7 +77,17 @@ const deleteActivity = (id) => ({
 
 const activityFormError = (error) => ({
   type: "ACTIVITY_ERROR",
-  error: "Unable to process request - please check all inputs",
+  error,
+});
+
+const setAddActivityModal = (isOpen) => ({
+  type: "SET_ADD_ACTIVITY",
+  isOpen,
+});
+
+const setEditActivityModal = (isOpen) => ({
+  type: "SET_EDIT_ACTIVITY",
+  isOpen,
 });
 
 export {
@@ -67,4 +95,6 @@ export {
   startEditActivity,
   startDeleteActivity,
   activityFormError,
+  setAddActivityModal,
+  setEditActivityModal,
 };

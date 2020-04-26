@@ -1,15 +1,12 @@
-import React, { useState } from "react";
-import { startEditGoal } from "../../../actions/goal";
-import GoalForm from "./GoalForm";
-import { useSelector } from "react-redux";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { setEditGoalModal } from "../../../actions/goal";
 
 const EditGoal = (props) => {
-  const goal = useSelector((state) => state.data.entities.goals[props.goalID]);
-
-  const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
 
   const openModal = () => {
-    setIsOpen(true);
+    dispatch(setEditGoalModal(props.goalID));
   };
 
   return (
@@ -17,14 +14,6 @@ const EditGoal = (props) => {
       <button className="bold-button--add-time" onClick={openModal}>
         Edit goal
       </button>
-      <GoalForm
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-        onSubmit={startEditGoal}
-        {...props}
-        {...goal}
-        activityID={goal.activity}
-      />
     </>
   );
 };

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import LongTermGoal from "./LongTermGoal";
 import AddActivity from "./AddActivity";
+import ActivityModal from "./ActivityModal";
 
 const UserPage = () => {
   const longTermGoals = useSelector((store) => store.data.entities.activities);
@@ -9,6 +10,7 @@ const UserPage = () => {
 
   return (
     <div className="user-page">
+      <ActivityModal />
       <div className="content-container--s">
         <AddActivity />
         <section className="ltg">

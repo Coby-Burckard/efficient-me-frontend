@@ -1,17 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ModalBody from "../../ModalBody";
 import { startDeleteGoal } from "../../../actions/goal";
-import { useHistory } from "react-router-dom";
 
 const GoalForm = (props) => {
+  //obtianing the goal to be added or edited
+  let activityID = useSelector((state) => state.modal.addGoal);
+  const goalID = useSelector((state) => state.modal.editGoal);
+  const goal = useSelector((state) => state.data.entities.goals[+goalID]) || {
+    a: "a",
+  };
+  if (!!goal.id) {
+    activityID = goal.activity;
+  }
+
+  //obtaining error message
+  const error = useSelector((state) => state.data.errors.goalError);
+
+  //obtaining user token
   const token = useSelector((state) => state.user.user);
+
+  //initializing form values
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [hoursRequired, setHoursRequired] = useState(0);
+  const [date, setDate] = useState("");
   const dispatch = useDispatch();
-  const [title, setTitle] = useState(props.title || "");
-  const [description, setDescription] = useState(props.description || "");
-  const [hoursRequired, setHoursRequired] = useState(props.hours_required || 0);
-  const [date, setDate] = useState(props.deadline || "");
-  const history = useHistory();
+
+  useEffect(() => {
+    setTitle(goal.title || "");
+    setDescription(goal.description || "");
+    setHoursRequired(goal.hours_required || 0);
+    setDate(goal.deadline || "");
+  }, [goal.deadline, goal.description, goal.hours_required, goal.title]);
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -31,25 +52,24 @@ const GoalForm = (props) => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const goal = {
+    const editedGoal = {
       title,
       description,
       hours_required: hoursRequired,
       deadline: date,
-      activity: props.activityID,
+      activity: activityID,
     };
-    dispatch(props.onSubmit(token, goal, props.id || null));
-    props.setIsOpen(false);
+    dispatch(props.onSubmit(token, editedGoal, goal.id || null));
   };
 
   const handleDelete = (e) => {
     e.preventDefault();
-    dispatch(startDeleteGoal(token, props.id, props.activityID));
+    dispatch(startDeleteGoal(token, props.id, activityID));
     props.setIsOpen(false);
   };
 
   return (
-    <ModalBody isOpen={props.isOpen} setIsOpen={props.setIsOpen}>
+    <ModalBody isOpen={!!props.isOpen} setIsOpen={props.setIsOpen}>
       <form className="modal__form" onSubmit={handleFormSubmit}>
         <input
           placeholder="title"
@@ -70,6 +90,7 @@ const GoalForm = (props) => {
           onChange={handleHoursRequiredChange}
         />
         <input type="date" value={date} onChange={handleDateChange} />
+        {!!error ? <p className="form__error">{error}</p> : <></>}
         <div className="modal__button-container">
           <button
             className="link-button link-button--submit-modal"
