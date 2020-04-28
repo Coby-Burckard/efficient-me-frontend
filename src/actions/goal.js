@@ -9,9 +9,7 @@ const startAddGoal = (token, goal) => {
     fetchAddGoal(token, goal)
       .then((response) => {
         if (response.status !== 201) {
-          throw new Promise((resolve, reject) => {
-            reject();
-          });
+          return Promise.reject();
         }
         return response.json();
       })
