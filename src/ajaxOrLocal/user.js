@@ -1,41 +1,42 @@
-import hostURL from "./settings";
+import hostURL from './settings';
 
-const loginRequest = ({ userName = "", password = "" }) => {
+const loginRequest = ({ userName = '', password = '' }) => {
   return fetch(`${hostURL}/api/getToken/`, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json"
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       username: `${userName}`,
-      password: `${password}`
-    })
+      password: `${password}`,
+    }),
   });
 };
 
 const localAuth = () => {
-  let localToken = localStorage.getItem("token");
+  let localToken = localStorage.getItem('token');
   if (!localToken) {
-    localToken = "";
+    localToken = '';
   }
   return localToken;
 };
 
 const localLogin = token => {
-  localStorage.setItem("token", token);
+  localStorage.setItem('token', token);
 };
 
 const localLogout = () => {
-  localStorage.removeItem("token");
+  localStorage.removeItem('token');
 };
 
-const createRequest = (user) => {
-  return fetch('http://127.0.0.1:8000/api/createUser/', {
-    method: "POST",
+const createRequest = user => {
+  return fetch(`${hostURL}/api/createUser/`, {
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json"
+      'Content-Type': 'application/json',
     },
-    body: JSON.stringify(user)})
-}
+    body: JSON.stringify(user),
+  });
+};
 
 export { loginRequest, localLogin, localLogout, localAuth, createRequest };
