@@ -1,3 +1,3 @@
-const hostURL = 'http://cobyburckard.pythonanywhere.com';
+const hostURL = 'https://cobyburckard.pythonanywhere.com';
 
 export { hostURL as default };
