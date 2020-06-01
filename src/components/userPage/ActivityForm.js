@@ -1,41 +1,40 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import ModalBody from "../ModalBody";
-import { startDeleteActivity } from "../../actions/activity";
-import { useHistory } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import ModalBody from '../ModalBody';
+import { startDeleteActivity } from '../../actions/activity';
+import { useHistory } from 'react-router-dom';
 
-const ActivityFrom = (props) => {
+const ActivityFrom = props => {
   //obtaining activity
-  const activityID = useSelector((state) => state.modal.editActivity);
+  const activityID = useSelector(state => state.modal.editActivity);
   const activity = useSelector(
-    (state) => state.data.entities.activities[+activityID]
-  ) || { a: "a" };
+    state => state.data.entities.activities[+activityID]
+  ) || { a: 'a' };
 
   //initilizing key values
-  const token = useSelector((state) => state.user.user);
-  const error = useSelector((state) => state.data.errors.activityError);
+  const token = useSelector(state => state.user.user);
+  const error = useSelector(state => state.data.errors.activityError);
   const dispatch = useDispatch();
   const history = useHistory();
 
   //initializing local state
-  const [title, setTitle] = useState(activity.title || "");
-  const [description, setDescription] = useState(activity.description || "");
+  const [title, setTitle] = useState(activity.title || '');
+  const [description, setDescription] = useState(activity.description || '');
 
   useEffect(() => {
-    console.log("calling use effect for activity", activity, activityID);
-    setTitle(activity.title || "");
-    setDescription(activity.description || "");
-  }, [activity, activity.description, activity.title, activityID]);
+    setTitle(activity.title || '');
+    setDescription(activity.description || '');
+  }, [activity.description, activity.title]);
 
-  const onTitleChange = (e) => {
+  const onTitleChange = e => {
     setTitle(e.target.value);
   };
 
-  const onDescriptionChange = (e) => {
+  const onDescriptionChange = e => {
     setDescription(e.target.value);
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = e => {
     e.preventDefault();
     const activity = {
       title,
@@ -45,11 +44,11 @@ const ActivityFrom = (props) => {
     dispatch(props.onSubmit(token, activity, activityID || null));
   };
 
-  const handleDelete = (e) => {
+  const handleDelete = e => {
     e.preventDefault();
     dispatch(startDeleteActivity(token, activity.id));
     props.setIsOpen(false);
-    history.push("/userpage");
+    history.push('/userpage');
   };
 
   return (
