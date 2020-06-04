@@ -1,6 +1,6 @@
-import React from "react";
-import { setAddActivityModal } from "../../actions/activity";
-import { useDispatch } from "react-redux";
+import React from 'react';
+import { setAddActivityModal } from '../../actions/activity';
+import { useDispatch } from 'react-redux';
 
 const AddActivity = () => {
   const dispatch = useDispatch();
@@ -15,8 +15,8 @@ const AddActivity = () => {
         <div className="add-activity__text-container">
           <h2 className="add-activity__title">Long Term Goals</h2>
           <p className="add-activity__subtitle">
-            Lorem ipsum dolor sit amet, eum iudico fuisset in, lorem aperiam vis
-            eu. Eu has mutat scripserit, sonet possit ne qui.
+            Create a new long term goal! Set a SMART target for something you
+            would like to achieve in 6-12 months.
           </p>
           <button className="bold-button--add-activity" onClick={openForm}>
             Create Long Term Goal
